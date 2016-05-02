@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import NavContainer from '../containers/NavContainer';
+
 
 const Main = React.createClass({
   render(){
     return(
       <div className="main-comp">
-        <h2>Header in main</h2>
+        <NavContainer/>
         {this.props.children}
       </div>
     )

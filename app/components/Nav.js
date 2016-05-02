@@ -5,8 +5,8 @@ import display from '../styles/styles';
 const Nav = React.createClass({
   render: function() {
     return(
-      <div className="headerBar">
-        <ul style={display.nav}>
+      <div style={display.header} className="headerBar">
+        <ul style={display.logo} style={display.nav}>
           <Link to='/'>
             <li className="navBarEl">GeoTube</li>
           </Link>

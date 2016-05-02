@@ -1,12 +1,12 @@
 import React from 'react';
-import App from './App';
+import Search from './Search';
 import {Link} from 'react-router';
 
 const Home = React.createClass({
   render(){
     return(
       <div className="home-comp">
-        <App />
+        <Search />
       </div>
     )
   }

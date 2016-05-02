@@ -1,5 +1,5 @@
 {
-  "name": "p3-frontend",
+  "name": "p4-frontend",
   "version": "0.1.0",
   "description": "frontend for project three",
   "main": "index.js",
@@ -11,16 +11,6 @@
   "engines": {
     "node": "0.12.4"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/matthewwoop/project-three.git"
-  },
-  "author": "Matthew Woop <matthew.woop@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/matthewwoop/project-three/issues"
-  },
-  "homepage": "https://github.com/matthewwoop/project-three#readme",
   "dependencies": {
     "axios": "^0.9.1",
     "express": "^4.13.4",

@@ -14,9 +14,9 @@
   "author": " Sean Keegan <seanryankeegan@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/matthewwoop/project-three/issues"
+    "url": "https://github.com/andyfry01/final-project-frontend/issues"
   },
-  "homepage": "https://github.com/matthewwoop/project-three#readme",
+  "homepage": "https://github.com/andyfry01/final-project-frontend#readme",
   "dependencies": {
     "axios": "^0.9.1",
     "express": "^4.13.4",

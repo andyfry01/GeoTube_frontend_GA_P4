@@ -1,7 +1,7 @@
 {
   "name": "p4-frontend",
   "version": "0.1.0",
-  "description": "frontend for project three",
+  "description": "frontend for project four",
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --progress --inline --hot --history-api-fallback",

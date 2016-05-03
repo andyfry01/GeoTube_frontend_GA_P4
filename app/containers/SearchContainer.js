@@ -50,6 +50,10 @@ const SearchContainer = React.createClass({
   showVideo: function(){
     this.setState({ showVideoComp : true})
   },
+  sendCoords: function(lat, long){
+    console.log("sendCoords function firing");
+    this.props.updateCity(lat, long)
+  },
   handleSubmit: function(e){
     const userInput = {
       city: this.state.city,
@@ -68,7 +72,7 @@ const SearchContainer = React.createClass({
       .then(function(response){
         var cityLat = response.data.results[0].geometry.location.lat;
         var cityLong = response.data.results[0].geometry.location.lng;
-
+        that.sendCoords(cityLat, cityLong)
         // console.log("response:", response);
         // console.log("lat and long are: ", cityLat,cityLong);
         ajaxHelpers.getVideos(cityLat, cityLong, userInput.searchRadius, userInput.maxResults,userInput.live,userInput.searchQuery)

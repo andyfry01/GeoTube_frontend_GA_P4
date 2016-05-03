@@ -8,12 +8,14 @@ const Videos = React.createClass({
   render: function(){
     console.log("in vid comp and props are", this.props);
     let video = this.props.ajaxReturn.map(function(obj){
-      let url = "https://www.youtube.com/watch?v=" + obj.id.videoId;
+      let url = "https://www.youtube.com/embed/" + obj.id.videoId;
       return(
         <div>
           <h4>{obj.snippet.title}</h4>
           <h2>{obj.id.videoId}</h2>
           <a href = {url}>Click me for video</a>
+          <iframe width="560" height="315" src={url} frameborder="0" allowfullscreen></iframe>
+
         </div>
       )
     })

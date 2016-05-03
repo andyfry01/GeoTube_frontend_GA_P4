@@ -14,7 +14,7 @@ const Search = React.createClass({
             <br/>
 
             <p style={display.search.searchPara} class="search-paragraph">Search radius(mi)?</p>
-            <input id="radius-input"></input>
+            <input id="radius-input" onChange={this.props.onChangeRadius}></input>
             <br/>
 
             <p style={display.search.searchPara} class="search-paragraph">All videos or only live?</p>
@@ -40,7 +40,7 @@ const Search = React.createClass({
             <p style={display.search.searchPara} class="search-paragraph">Anything in particular you'd like to search for?</p>
             <input id="query-input" onChange={this.props.onChangeQuery}></input>
             <br/>
-            <button>Search!</button>
+            <button type='button' onClick={this.props.onSubmit}>Search!</button>
           </form>
         </div>
         <hr/>

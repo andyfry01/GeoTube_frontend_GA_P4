@@ -1,17 +1,17 @@
 {
-  "name": "p3-frontend",
+  "name": "p4-frontend",
   "version": "0.1.0",
   "description": "frontend for project three",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --inline --hot --history-api-fallback",
-    "production": "webpack -p"
+    "start-dev": "webpack-dev-server --progress --inline --hot --history-api-fallback",
+    "production": "webpack -p",
+    "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/matthewwoop/project-three.git"
+  "engines": {
+    "node": "0.12.4"
   },
-  "author": "Matthew Woop <seanryankeegan@gmail.com>",
+  "author": " Sean Keegan <seanryankeegan@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/matthewwoop/project-three/issues"
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/matthewwoop/project-three#readme",
   "dependencies": {
     "axios": "^0.9.1",
+    "express": "^4.13.4",
     "react": "^15.0.1",
     "react-bootstrap": "^0.28.5",
     "react-dom": "^15.0.1",

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+
+      var post = function (){
+        $.ajax({
+          method: 'POST',
+          url: 'http://localhost:3000/videos?title=' + "Test title two" + '&description=' + "This is yet another test video" + '&thumbnail=' + "https://i.ytimg.com/vi/r-qhj3sJ5qs/hqdefault.jpg" + '&link=' + "r-qhj3sJ5qs" + '&date=' + "2011-03-18T15:42:14.000Z" + '&live=' + "true"
+        }).done(function(response){
+          console.log(response);
+          del();
+        })
+      }
+
+      var del = function(){
+        $.ajax({
+          method: 'DELETE',
+          url: 'http://localhost:3000/videos/1'
+        }).done(function(response){
+          console.log(response);
+          get();
+        })
+
+      }
+
+      var get = function(){
+        $.ajax({
+          method: 'GET',
+          url: 'http://localhost:3000/videos'
+        }).done(function(data){
+          console.log(data);
+        })
+      }
+
+      // post();
+      // get();
+      del()
+    </script>
+
+  </body>
+</html>

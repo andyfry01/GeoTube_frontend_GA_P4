@@ -7,7 +7,8 @@ const MapComponent = React.createClass({
   componentWillReceiveProps: function(){
     console.log("props for map component", this);
     this.setState({
-      coords: {lat: this.props.lat, lng: this.props.long}
+      coords: {lat: this.props.lat, lng: this.props.long},
+      radius: this.state.radius
     })
     this.displayMap()
   },
@@ -15,7 +16,8 @@ const MapComponent = React.createClass({
   getInitialState: function(){
 
     return {
-      coords: { lat: 40.7128, lng: -74.0059 }
+      coords: { lat: this.props.lat, lng: this.props.long },
+      radius: this.props.radius
     }
   },
 
@@ -46,7 +48,7 @@ const MapComponent = React.createClass({
             fillColor={'#000000'}
             fillOpacity={1}
             center={this.state.coords}
-            radius={5000}
+            radius={this.state.radius}
           ></Circle>
 
           </GoogleMap>

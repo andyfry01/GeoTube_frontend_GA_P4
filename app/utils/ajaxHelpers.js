@@ -1,4 +1,6 @@
 import axios from 'axios';
+import API_KEY from './API_KEY';
+
 const helpers = {
   getCoordinates: function(city){
     return axios.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + '&key=' + API_KEY);

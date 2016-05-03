@@ -11,6 +11,12 @@
   "engines": {
     "node": "0.12.4"
   },
+  "author": " Sean Keegan <seanryankeegan@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andyfry01/final-project-frontend/issues"
+  },
+  "homepage": "https://github.com/andyfry01/final-project-frontend#readme",
   "dependencies": {
     "axios": "^0.9.1",
     "express": "^4.13.4",

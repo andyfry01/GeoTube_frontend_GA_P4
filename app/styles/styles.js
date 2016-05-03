@@ -13,9 +13,23 @@ export default {
     height: '80px',
   },
   search: {
+    parentDiv: {
+      display: "flex",
+      flexFlow: "row wrap",
+      justifyContent: "space-around"
+    },
     searchPara: {
-      margin: "10px 0px 5px 0px",
+      margin: "0px 0px 5px 0px",
       color: "blue",
+      textAlign: "center",
+    },
+    searchSelect: {
+      margin: "0 auto"
+    },
+    button: {
+      margin: "0 auto",
+      color: "white",
+      backgroundColor: "red"
     }
   }
 }

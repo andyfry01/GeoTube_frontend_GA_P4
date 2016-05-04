@@ -23,13 +23,8 @@ const Videos = React.createClass({
 
         return (
           <Video
-          <div style={display.videos.rightDiv} >
-            <div style={display.videos.eachVideoElement}>
-              <h4 style={display.videos.titleInfo}>{obj.title}</h4>
-              <iframe width="560" height="280" src={url} frameborder="0" allowfullscreen></iframe>
-              <button type="button" onClick={this.addVideo(obj.videoId, obj.title)}>Add to favorites</button>
-            </div>
-          </div>
+            videoId = {obj.videoId}
+            title = {obj.title}
           />
         )
       })

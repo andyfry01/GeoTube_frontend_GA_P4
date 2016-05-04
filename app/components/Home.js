@@ -8,6 +8,7 @@ import Videos from './Videos'
 
 
 const Home = React.createClass({
+
   getInitialState: function(){
     return {
       city: '',
@@ -24,14 +25,14 @@ const Home = React.createClass({
     }
   },
 
-  updateMap: function(lat, long){
-    this.setState({
-      lat: lat,
-      long: long,
-      radius: 1000
-    })
-    console.log("state in home component", this.state);
-  },
+  // updateMap: function(lat, long){
+  //   this.setState({
+  //     lat: lat,
+  //     long: long,
+  //     radius: 1000
+  //   })
+  //   console.log("state in home component", this.state);
+  // },
   updateCity: function(cityName){
     this.setState({
       city: cityName
@@ -78,7 +79,7 @@ const Home = React.createClass({
       console.log("userInput: ", userInput);
 
       var that = this;
-      
+
       ajaxHelpers.getCoordinates(userInput.city)
       .then(function(response){
         var cityLat = response.data.results[0].geometry.location.lat;
@@ -92,6 +93,10 @@ const Home = React.createClass({
           })
           console.log("ajaxReturn hereee: ", that.state.ajaxReturn);
           that.setState({showVideoComp : true});
+          that.setState({
+            lat: cityLat,
+            long: cityLong
+          })
         })
       })
     }

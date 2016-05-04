@@ -20,6 +20,7 @@ const Videos = React.createClass({
           <div style={display.videos.eachVideoElement}>
             <h4 style={display.videos.titleInfo}>{obj.snippet.title}</h4>
             <iframe width="560" height="280" src={url} frameborder="0" allowfullscreen></iframe>
+            <h4 className="favoriteLink" style={display.videos.favorite}>Add to favorites</h4>
           </div>
         </div>
       )

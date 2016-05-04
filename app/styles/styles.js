@@ -57,6 +57,10 @@ export default {
       textAlign: 'center',
       fontWeight: 'bold',
       color: 'red'
-    }
+    },
+    favorite: {
+      textAlign: 'right',
+      cursor: 'pointer'
+    },
   }
 }

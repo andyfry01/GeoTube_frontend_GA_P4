@@ -1,5 +1,7 @@
 import React from 'react';
 import display from '../styles/styles';
+import {Navbar, NavItem} from 'react-materialize';
+
 
 const Search = React.createClass({
   render: function(){

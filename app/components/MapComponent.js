@@ -36,7 +36,6 @@ const MapComponent = React.createClass({
         googleMapElement={
 
           <GoogleMap
-            ref={ (map) => console.log(map) }
             defaultZoom={12}
             center={this.state.coords}
           >

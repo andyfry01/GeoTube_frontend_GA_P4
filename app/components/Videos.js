@@ -15,11 +15,11 @@ const Videos = React.createClass({
     }
     console.log("in vid comp and props are", this.props);
     let video = this.props.ajaxReturn.map(function(obj){
-      let url = "https://www.youtube.com/embed/" + obj.id.videoId;
+      let url = "https://www.youtube.com/embed/" + obj.videoId;
       return(
         <div style={display.videos.rightDiv}>
           <div style={display.videos.eachVideoElement}>
-            <h4 style={display.videos.titleInfo}>{obj.snippet.title}</h4>
+            <h4 style={display.videos.titleInfo}>{obj.title}</h4>
             <iframe width="560" height="280" src={url} frameborder="0" allowfullscreen></iframe>
             <h4 className="favoriteLink" style={display.videos.favorite}>Add to favorites</h4>
           </div>

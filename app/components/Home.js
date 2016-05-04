@@ -89,10 +89,18 @@ const Home = React.createClass({
         ajaxHelpers.getVideos(cityLat, cityLong, userInput.searchRadius, userInput.maxResults,userInput.live,userInput.searchQuery)
         .then(function(response){
           console.log("youtube respone: ", response.data.items);
-          that.setState({
-            ajaxReturn : response.data.items
+          let videoData = response.data.items.map(function(result){
+            return(
+              {
+                videoId : result.id.videoId,
+                title : result.snippet.title
+              }
+            )
           })
-          console.log("ajaxReturn hereee: ", that.state.ajaxReturn);
+          that.setState({
+            ajaxReturn : videoData
+          })
+          console.log("ajaxReturn here: ", that.state.ajaxReturn);
           that.setState({showVideoComp : true});
         })
       })

@@ -16,7 +16,7 @@ export default {
     parentDiv: {
       display: "flex",
       flexFlow: "row wrap",
-      justifyContent: "space-around"
+      justifyContent: "space-between"
     },
     searchPara: {
       margin: "0px 0px 5px 0px",

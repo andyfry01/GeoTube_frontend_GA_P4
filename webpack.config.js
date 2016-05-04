@@ -15,7 +15,6 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-  // externals: ['axios'],
   plugins: [HtmlWebpackPluginConfig],
   module: {
     loaders: [

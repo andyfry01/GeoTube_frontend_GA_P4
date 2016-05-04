@@ -60,7 +60,8 @@ export default {
     },
     favorite: {
       textAlign: 'right',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      color: 'red'
     },
   }
 }

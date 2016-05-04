@@ -14,7 +14,7 @@ const Videos = React.createClass({
           <h4>{obj.snippet.title}</h4>
           <h2>{obj.id.videoId}</h2>
           <a href = {url}>Click me for video</a>
-          <iframe width="560" height="315" src={url} frameborder="0" allowfullscreen></iframe>
+          <iframe width="360" height="210" src={url} frameborder="0" allowfullscreen="true"></iframe>
 
         </div>
       )

@@ -20,7 +20,7 @@ const Home = React.createClass({
     })
     console.log("state in home component", this.state);
   },
-
+// make home-comp flexbox, flexflow: row nowrap.
   render(){
     return(
       <div className="home-comp">

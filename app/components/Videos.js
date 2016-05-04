@@ -12,8 +12,6 @@ const Videos = React.createClass({
       return(
         <div>
           <h4>{obj.snippet.title}</h4>
-          <h2>{obj.id.videoId}</h2>
-          <a href = {url}>Click me for video</a>
           <iframe width="360" height="210" src={url} frameborder="0" allowfullscreen="true"></iframe>
 
         </div>
@@ -27,8 +25,7 @@ const Videos = React.createClass({
 
 export default Videos;
 
-// let url = {obj.id.videoId}
-// <a href = "https://www.youtube.com/watch?v=" + url></a>
+//Search passes info up to searchcontainer, which will pass it up to Main, which passes it down to Videos as props.
 
 
 // const TopHitsComponent = React.createClass({

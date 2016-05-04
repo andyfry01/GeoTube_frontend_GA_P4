@@ -31,5 +31,13 @@ export default {
       color: "white",
       backgroundColor: "red"
     }
+  },
+  main: {
+    parent: {
+      display: "flex",
+      flexFlow: "row nowrap",
+      height: '50vh',
+      width: '50vw',
+    },
   }
 }

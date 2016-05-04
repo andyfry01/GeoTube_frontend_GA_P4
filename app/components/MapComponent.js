@@ -28,7 +28,7 @@ const MapComponent = React.createClass({
           <div
             style={{
               height: '50vh',
-              width: '100vw'
+              width: '50vw'
             }}
           />
         }

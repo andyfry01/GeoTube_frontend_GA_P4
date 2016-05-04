@@ -4,7 +4,8 @@ import MapComponent from './MapComponent';
 import axios from 'axios';
 import {Link} from 'react-router';
 import ajaxHelpers from "../utils/ajaxHelpers";
-import Videos from './Videos'
+import Videos from './Videos';
+import display from '../styles/styles';
 
 
 const Home = React.createClass({
@@ -101,9 +102,11 @@ const Home = React.createClass({
   render(){
     return(
       <div className="home-comp">
-        <MapComponent lat={this.state.lat} long={this.state.long} radius={this.state.radius} />
         <SearchContainer updateMap={this.updateMap} updateCity={this.updateCity} updateLive={this.updateLive} updateMax={this.updateMax} updateQuery={this.updateQuery} updateRadius={this.updateRadius} showVideo={this.showVideo} handleSubmit={this.handleSubmit}/>
-        { this.state.showVideoComp ? <Videos ajaxReturn={this.state.ajaxReturn}/> : null}
+        <div style={display.main.parent} className="content-container">
+          <MapComponent lat={this.state.lat} long={this.state.long} radius={this.state.radius} />
+          { this.state.showVideoComp ? <Videos ajaxReturn={this.state.ajaxReturn}/> : null}
+        </div>
 
       </div>
     )

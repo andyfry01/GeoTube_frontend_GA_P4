@@ -3,36 +3,44 @@ import SearchContainer from '../containers/SearchContainer';
 import display from '../styles/styles';
 import styles from '../styles/styles.css';
 import ScrollArea from 'react-scrollbar';
+import ajaxHelpers from '../utils/ajaxHelpers'
+import Video from './Video'
 
 const Videos = React.createClass({
   componentDidMount: function(){
     console.log("in componentDidMount and props are:", this.props);
   },
+  addVideo: function(videoId, title){
+    console.log("you clicked me!");
+    console.log(videoId, title);
+    // console.log(videoId, title);
+    // return ajaxHelpers.addVideo(videoId, title)
+  },
   render: function(){
-    const Style = {
-      height: "50vh",
-      width: "100vw",
-    }
-    console.log("in vid comp and props are", this.props);
-    let video = this.props.ajaxReturn.map(function(obj){
+
+    let video = this.props.ajaxReturn.map((obj) => {
       let url = "https://www.youtube.com/embed/" + obj.videoId;
-      return(
-        <div style={display.videos.rightDiv}>
-          <div style={display.videos.eachVideoElement}>
-            <h4 style={display.videos.titleInfo}>{obj.title}</h4>
-            <iframe width="560" height="280" src={url} frameborder="0" allowfullscreen></iframe>
-            <h4 className="favoriteLink" style={display.videos.favorite}>Add to favorites</h4>
+
+        return (
+          <Video
+          <div style={display.videos.rightDiv} >
+            <div style={display.videos.eachVideoElement}>
+              <h4 style={display.videos.titleInfo}>{obj.title}</h4>
+              <iframe width="560" height="280" src={url} frameborder="0" allowfullscreen></iframe>
+              <button type="button" onClick={this.addVideo(obj.videoId, obj.title)}>Add to favorites</button>
+            </div>
           </div>
-        </div>
-      )
-    })
-    return(
+          />
+        )
+      })
+
+    return (
       <ScrollArea
         smoothScrolling={true}
         minScrollSize={40}
         style={Style}
         >
-        {video}
+        <Video ajaxReturn={this.props.ajaxReturn} />
       </ScrollArea>
     )
   }

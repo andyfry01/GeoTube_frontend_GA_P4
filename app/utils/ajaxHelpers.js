@@ -29,6 +29,12 @@ const helpers = {
     }
     var searchQuery = "https://www.googleapis.com/youtube/v3/search?part=snippet" + coords + radius + live + query + maxResults + '&order=viewCount&type=video&key=' + API_KEY;
     return axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet' + coords + radius + live + query + maxResults + '&order=viewCount&type=video&key=' + API_KEY);
+  },
+  addVideo: function(videoId, title) {
+    return axios.post('http://localhost:3000/videos?videoId=' + videoId + '&title=' + title)
+    .then(function(response){
+      console.log('response from DB when posting video:', response);
+    })
   }
 
 }

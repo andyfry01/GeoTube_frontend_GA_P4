@@ -4,7 +4,7 @@ import MapComponent from './MapComponent';
 import axios from 'axios';
 import {Link} from 'react-router';
 import ajaxHelpers from "../utils/ajaxHelpers";
-import Videos from './Videos';
+import VideoComponent from './VideoComponent';
 import display from '../styles/styles';
 
 
@@ -90,7 +90,7 @@ const Home = React.createClass({
         .then(function(response){
           console.log("youtube respone: ", response.data.items);
           let videoData = response.data.items.map(function(result){
-            return(
+            return (
               {
                 videoId : result.id.videoId,
                 title : result.snippet.title
@@ -113,7 +113,7 @@ const Home = React.createClass({
         <SearchContainer updateMap={this.updateMap} updateCity={this.updateCity} updateLive={this.updateLive} updateMax={this.updateMax} updateQuery={this.updateQuery} updateRadius={this.updateRadius} showVideo={this.showVideo} handleSubmit={this.handleSubmit}/>
         <div style={display.main.parent} id="content-container">
           <MapComponent lat={this.state.lat} long={this.state.long} radius={this.state.radius} />
-          { this.state.showVideoComp ? <Videos ajaxReturn={this.state.ajaxReturn}/> : null}
+          { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn}/> : null}
         </div>
 
       </div>

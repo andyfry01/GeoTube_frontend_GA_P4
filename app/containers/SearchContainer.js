@@ -1,6 +1,5 @@
 import React from "react";
 import Search from "../components/Search";
-import Videos from "../components/Videos";
 import axios from 'axios';
 import ajaxHelpers from "../utils/ajaxHelpers";
 

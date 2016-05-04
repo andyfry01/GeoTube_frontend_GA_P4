@@ -23,7 +23,7 @@ const Videos = React.createClass({
 
         return (
           <Video
-            videoId = {obj.videoId}
+            videoId = {url}
             title = {obj.title}
           />
         )
@@ -33,7 +33,6 @@ const Videos = React.createClass({
       <ScrollArea
         smoothScrolling={true}
         minScrollSize={40}
-        style={Style}
         >
         <Video ajaxReturn={this.props.ajaxReturn} />
       </ScrollArea>

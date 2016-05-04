@@ -28,8 +28,7 @@ const helpers = {
       var query = '';
     }
     var searchQuery = "https://www.googleapis.com/youtube/v3/search?part=snippet" + coords + radius + live + query + maxResults + '&order=viewCount&type=video&key=' + API_KEY;
-      // console.log("searchQuery is:", searchQuery);
-    return axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet' + coords + radius + live + query + maxResults + '&order=viewCount&type=video&key=' + API_KEY)
+    return axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet' + coords + radius + live + query + maxResults + '&order=viewCount&type=video&key=' + API_KEY);
   }
 
 }

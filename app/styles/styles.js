@@ -37,7 +37,26 @@ export default {
       display: "flex",
       flexFlow: "row nowrap",
       height: '50vh',
-      width: '50vw',
+      width: '100vw',
     },
+  },
+  videos: {
+    rightDiv: {
+      border: "1px solid black",
+      display: "flex",
+      flexFlow: "row nowrap",
+      justifyContent: "center",
+      padding: "3px",
+    },
+    eachVideoElement: {
+      margin: '0 8.5%'
+
+    },
+    titleInfo: {
+      margin: '5px auto',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      color: 'red'
+    }
   }
 }

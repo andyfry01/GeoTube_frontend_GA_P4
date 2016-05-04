@@ -56,7 +56,7 @@ const Home = React.createClass({
   },
   updateRadius: function(radius) {
     this.setState({
-      searchRadius: radius
+      searchRadius: radius + "mi"
     })
   },
   showVideo: function(){
@@ -103,7 +103,7 @@ const Home = React.createClass({
     return(
       <div className="home-comp">
         <SearchContainer updateMap={this.updateMap} updateCity={this.updateCity} updateLive={this.updateLive} updateMax={this.updateMax} updateQuery={this.updateQuery} updateRadius={this.updateRadius} showVideo={this.showVideo} handleSubmit={this.handleSubmit}/>
-        <div style={display.main.parent} className="content-container">
+        <div style={display.main.parent} id="content-container">
           <MapComponent lat={this.state.lat} long={this.state.long} radius={this.state.radius} />
           { this.state.showVideoComp ? <Videos ajaxReturn={this.state.ajaxReturn}/> : null}
         </div>

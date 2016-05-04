@@ -1,24 +1,37 @@
 import React from 'react';
 import SearchContainer from '../containers/SearchContainer';
+import display from '../styles/styles';
+import ScrollArea from 'react-scrollbar';
 
 const Videos = React.createClass({
   componentDidMount: function(){
     console.log("in componentDidMount and props are:", this.props);
   },
   render: function(){
+    const Style = {
+      height: "50vh",
+      width: "100vw",
+    }
     console.log("in vid comp and props are", this.props);
     let video = this.props.ajaxReturn.map(function(obj){
       let url = "https://www.youtube.com/embed/" + obj.id.videoId;
       return(
-        <div>
-          <h4>{obj.snippet.title}</h4>
-          <iframe width="360" height="210" src={url} frameborder="0" allowfullscreen="true"></iframe>
-
+        <div style={display.videos.rightDiv}>
+          <div style={display.videos.eachVideoElement}>
+            <h4 style={display.videos.titleInfo}>{obj.snippet.title}</h4>
+            <iframe width="560" height="280" src={url} frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
       )
     })
     return(
-      <div>{video}</div>
+      <ScrollArea
+        smoothScrolling={true}
+        minScrollSize={40}
+        style={Style}
+        >
+        {video}
+      </ScrollArea>
     )
   }
 })

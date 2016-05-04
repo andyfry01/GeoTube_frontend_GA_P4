@@ -78,13 +78,12 @@ const Home = React.createClass({
       console.log("userInput: ", userInput);
 
       var that = this;
+      
       ajaxHelpers.getCoordinates(userInput.city)
       .then(function(response){
         var cityLat = response.data.results[0].geometry.location.lat;
         var cityLong = response.data.results[0].geometry.location.lng;
-        // that.sendCoords(cityLat, cityLong)
-        // console.log("response:", response);
-        // console.log("lat and long are: ", cityLat,cityLong);
+
         ajaxHelpers.getVideos(cityLat, cityLong, userInput.searchRadius, userInput.maxResults,userInput.live,userInput.searchQuery)
         .then(function(response){
           console.log("youtube respone: ", response.data.items);

@@ -4,15 +4,6 @@ import Circle from "../../node_modules/react-google-maps/lib/Circle"
 
 const MapComponent = React.createClass({
 
-  componentWillReceiveProps: function(){
-    console.log("props for map component", this);
-    this.setState({
-      coords: {lat: this.props.lat, lng: this.props.long},
-      radius: this.state.radius
-    })
-    this.displayMap()
-  },
-
   getInitialState: function(){
 
     return {
@@ -20,9 +11,20 @@ const MapComponent = React.createClass({
       radius: this.props.radius
     }
   },
+  componentWillReceiveProps: function(){
+    console.log("props for map component", this);
+    this.setState({
+      coords: {lat: this.props.lat, lng: this.props.long},
+      radius: this.props.radius
+    })
+  },
+  shouldComponentUpdate: function(){
+
+  },
+
 
   displayMap: function(){
-    return(
+    return (
       <GoogleMapLoader
         containerElement={
           <div
@@ -36,7 +38,6 @@ const MapComponent = React.createClass({
         googleMapElement={
 
           <GoogleMap
-            ref={ (map) => console.log(map) }
             defaultZoom={12}
             center={this.state.coords}
           >

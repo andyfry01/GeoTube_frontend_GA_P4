@@ -22,7 +22,6 @@ const Videos = React.createClass({
       let url = "https://www.youtube.com/embed/" + obj.videoId;
 
         return (
-          <Video
           <div style={display.videos.rightDiv} >
             <div style={display.videos.eachVideoElement}>
               <h4 style={display.videos.titleInfo}>{obj.title}</h4>
@@ -30,7 +29,6 @@ const Videos = React.createClass({
               <button type="button" onClick={this.addVideo(obj.videoId, obj.title)}>Add to favorites</button>
             </div>
           </div>
-          />
         )
       })
 

@@ -1,0 +1,13 @@
+.favoriteLink:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.favoriteLink {
+  text-align: right;
+  color: red;
+}
+
+body {
+  font-family: sans-serif Garamond;
+}

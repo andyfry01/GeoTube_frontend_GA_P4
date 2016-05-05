@@ -1,46 +1,40 @@
 import React from 'react';
 import display from '../styles/styles';
+import {Input, Row, Button} from 'react-materialize';
 
-function FilterCategory() {
-  return(
-    <div>
-      <hr/>
-      <h3>Search for a video!</h3>
-      <div className="filter-bar">
-        <p style={display.search.searchPara} class="search-paragraph">Enter a city</p>
-        <input id="city-input"></input>
-        <br/>
 
-        <p style={display.search.searchPara} class="search-paragraph">Search radius(mi)?</p>
-        <input id="radius-input"></input>
-        <br/>
-
-        <p style={display.search.searchPara} class="search-paragraph">All videos or only live?</p>
-        <select
-          className="select-live"
-          >
-          <option value="not-only-live">All</option>
-          <option value="only-live">Only live</option>
-        </select>
-
-        <p style={display.search.searchPara} class="search-paragraph">How many results would you like?</p>
-        <select
-          className="select-number"
-          >
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="25">25</option>
-          <option value="50">50</option>
-        </select>
-
-        <p style={display.search.searchPara} class="search-paragraph">Anything in particular you'd like to search for?</p>
-        <input id="query-input"></input>
-        <br/>
-        <button>Search!</button>
+const Search = React.createClass({
+  render: function(){
+    return(
+      <div id="mainDiv" style={display.search.mainDiv}>
+        <h4 style={display.search.searchHeader}>Search for a video!</h4>
+          <div id="rowContainer">
+            <Row>
+              <Input s={2} onChange={this.props.onChangeCity} label="Search Location" placeholder="ex: 'New York,' 'Russia'" />
+              <Input s={1.5} type="select" onChange = {this.props.onChangeLive} label="Live or All">
+                <option value="false">All videos</option>
+                <option value="true">Only live</option>
+              </Input>
+              <Input s={1.5} type="select" onChange={this.props.onChangeRadius} label ="Search Radius">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+              </Input>
+              <Input s={1.5} type="select" onChange={this.props.onChangeMaxResults} label ="# of videos returned?">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+              </Input>
+              <Input s={3} onChange={this.props.onChangeQuery} label ="Anything in particular you'd like to find?"/>
+              <Button floating large className='red' waves='light' icon='grade' onClick={this.props.onSubmit} />
+            </Row>
+          </div>
+        <hr></hr>
       </div>
-      <hr/>
-    </div>
-  )
-}
+    )
+  }
+})
 
-export default FilterCategory;
+export default Search;

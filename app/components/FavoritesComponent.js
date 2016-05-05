@@ -36,7 +36,7 @@ const Favorites = React.createClass({
   },
   render: function(){
     return (
-      <div>{this.state.showFavoriteComp ? {favorite} : null}</div>
+      <h1>hi!</h1>
     )
   }
 })

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const helpers = {
   getCoordinates: function(city){
-    return axios.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + '&key=' + process.env.API_KEY);
+    return axios.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + '&key=' + process.env.GEOTUBE_API_KEY);
   },
   getVideos: function(latParam,longParam,radiusParam,maxResultsParam,liveBooleanParam, queryParam){
     var radius = '&locationRadius=' + radiusParam;
@@ -26,8 +26,8 @@ const helpers = {
     } else {
       var query = '';
     }
-    var searchQuery = "https://www.googleapis.com/youtube/v3/search?part=snippet" + coords + radius + live + query + maxResults + '&order=viewCount&type=video&key=' + process.env.API_KEY;
-    return axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet' + coords + radius + live + query + maxResults + '&order=viewCount&type=video&key=' + process.env.API_KEY);
+    var searchQuery = "https://www.googleapis.com/youtube/v3/search?part=snippet" + coords + radius + live + query + maxResults + '&order=viewCount&type=video&key=' + process.env.GEOTUBE_API_KEY;
+    return axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet' + coords + radius + live + query + maxResults + '&order=viewCount&type=video&key=' + process.env.GEOTUBE_API_KEY);
   },
   addVideo: function(videoId, title) {
     return axios.post('http://localhost:3000/videos?videoId=' + videoId + '&title=' + title)

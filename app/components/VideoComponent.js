@@ -13,8 +13,6 @@ const Videos = React.createClass({
   addVideo: function(videoId, title){
     console.log("you clicked me!");
     console.log(videoId, title);
-    // console.log(videoId, title);
-    // return ajaxHelpers.addVideo(videoId, title)
   },
   render: function(){
 
@@ -34,7 +32,7 @@ const Videos = React.createClass({
         smoothScrolling={true}
         minScrollSize={40}
         >
-        <Video ajaxReturn={this.props.ajaxReturn} />
+        {video}
       </ScrollArea>
     )
   }

@@ -3,6 +3,7 @@ import { Router, Route, IndexRoute, browserHistory} from 'react-router';
 import Home from '../components/Home';
 import Main from '../components/Main';
 import NavContainer from '../containers/NavContainer';
+import About from '../components/About';
 
 
 
@@ -16,6 +17,7 @@ const routes = (
   <Router history={browserHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Home} />
+      <Route path='/About' component={About} />
     </Route>
   </Router>
 )

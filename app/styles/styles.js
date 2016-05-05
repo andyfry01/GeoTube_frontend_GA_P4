@@ -16,12 +16,17 @@ export default {
     mainDiv: {
       backgroundImage: "url('http://www.freestylephoto.biz/static/images/product/321253.jpg')",
       backgroundSize: "cover",
-      margin: "0 auto"
+      margin: "0 auto",
     },
     searchHeader: {
       color: "#9e9e9e",
       textAlign: "center",
-      margin: "0 0 5px 0",
+      margin: "5px 0 10px 0",
+    },
+    rowContainer: {
+      display: "flex",
+      flexFlow: "row",
+      justifyContent: "space-around"
     },
     parentDiv: {
       display: "flex",
@@ -48,6 +53,7 @@ export default {
       flexFlow: "row nowrap",
       height: '50vh',
       width: '100vw',
+      marginTop: "-8px"
     },
   },
   videos: {
@@ -93,12 +99,15 @@ export default {
       justifyContent: "space-around",
       backgroundImage: "url('https://bikramyoganyc.com/wp-content/uploads/2015/07/flatiron_building_new_york_city-111.jpg')",
       backgroundSize: "cover",
+      backgroundPosition: "center"
     },
     topInfo: {
-      marginRight: "15%"
+      marginRight: "15%",
+      marginLeft: "3%",
     },
     bottomInfo: {
-      marginLeft: "15%"
+      marginLeft: "15%",
+      marginRight: "3%"
     },
     infoPar: {
       color: "white",
@@ -108,7 +117,8 @@ export default {
       background: "black",
       opacity: "0.7",
       borderRadius: "2%",
-      padding: "3px"
+      paddingLeft: "8px",
+      paddingRight: "8px"
     },
     p: {
       opacity: "1"

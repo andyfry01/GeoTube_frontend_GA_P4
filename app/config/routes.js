@@ -4,6 +4,7 @@ import Home from '../components/Home';
 import Main from '../components/Main';
 import NavContainer from '../containers/NavContainer';
 import About from '../components/About';
+import Favorites from '../components/Favorites';
 
 
 
@@ -18,6 +19,7 @@ const routes = (
     <Route path='/' component={Main}>
       <IndexRoute component={Home} />
       <Route path='/About' component={About} />
+      <Route path='/Favorites' component={Favorites} />
     </Route>
   </Router>
 )

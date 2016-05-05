@@ -4,8 +4,8 @@ import axios from 'axios';
 import ajaxHelpers from "../utils/ajaxHelpers";
 import display from '../styles/styles';
 import {Input, Row, Button} from 'react-materialize';
-import MapComponent from '../components/MapComponent'
-import VideoComponent from '../components/VideoComponent'
+import MapComponent from '../components/MapComponent';
+import VideoComponent from '../components/VideoComponent';
 
 const SearchContainer = React.createClass({
   getInitialState: function() {
@@ -21,6 +21,9 @@ const SearchContainer = React.createClass({
       radius: 8000,
       zoom: 11
     };
+  },
+  componentDidMount: function() {
+    console.log("process.env", process.env.GEOTUBE_API_KEY);
   },
   setZoomLevel: function(radius){
     switch (radius){

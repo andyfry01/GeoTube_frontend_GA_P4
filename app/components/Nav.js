@@ -8,7 +8,7 @@ const Nav = React.createClass({
     return(
       <Navbar brand='GeoTube' right>
         <NavItem href='about'>About</NavItem>
-        <NavItem href='components.html'>Hearted Vids</NavItem>
+        <NavItem href='favorites'>Favorites</NavItem>
       </Navbar>
 
     )

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import API_KEY from './API_KEY';
 
 const helpers = {
   getCoordinates: function(city){

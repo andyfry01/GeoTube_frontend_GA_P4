@@ -7,13 +7,6 @@ import ajaxHelpers from '../utils/ajaxHelpers'
 import Video from './Video'
 
 const Videos = React.createClass({
-  componentDidMount: function(){
-    console.log("in componentDidMount and props are:", this.props);
-  },
-  addVideo: function(videoId, title){
-    console.log("you clicked me!");
-    console.log(videoId, title);
-  },
   render: function(){
 
     let video = this.props.ajaxReturn.map((obj) => {

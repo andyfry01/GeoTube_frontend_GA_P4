@@ -5,6 +5,7 @@ import ajaxHelpers from "../utils/ajaxHelpers";
 import display from '../styles/styles';
 import {Input, Row, Button} from 'react-materialize';
 import MapComponent from '../components/MapComponent'
+import VideoComponent from '../components/VideoComponent'
 
 const SearchContainer = React.createClass({
   getInitialState: function() {
@@ -13,15 +14,33 @@ const SearchContainer = React.createClass({
       live: false,
       maxResults: 5,
       searchQuery: '',
-      searchRadius: '20mi',
+      searchRadius: '5mi',
       ajaxReturn: '',
       showVideoComp: false,
       coords: {lat: 40.7128, lng: -74.0059},
-      lat: 40.7128,
-      long: -74.0059,
-      radius: 1000
+      radius: 8000,
+      zoom: 11
     };
   },
+  setZoomLevel: function(radius){
+    switch (radius){
+      case 8000:
+        this.setState({ zoom: 11 })
+        break;
+      case 16000:
+        this.setState({ zoom: 10 })
+        break;
+      case 40000:
+        this.setState({ zoom: 9 })
+        break;
+      case 80000:
+        this.setState({ zoom: 8 })
+        break;
+        default:
+        this.setState({ zoom: 10 })
+    }
+  },
+
   handleMaxResults: function(e){
     this.setState({
       maxResults: e.target.value
@@ -44,17 +63,15 @@ const SearchContainer = React.createClass({
   },
   handleRadius: function(e){
     this.setState({
-      searchRadius: e.target.value + "mi"
+      searchRadius: e.target.value + "mi",
+      radius: e.target.value * 1600
     })
+    this.setZoomLevel(this.state.radius)
   },
   showVideo: function(){
     this.setState({
       showVideoComp: true
     })
-  },
-  sendCoords: function(lat, long){
-    console.log("sendCoords function firing");
-    this.props.updateMap(lat, long)
   },
 
   handleSubmit: function(){
@@ -103,7 +120,7 @@ const SearchContainer = React.createClass({
     }
   },
   render: function(){
-    return(
+    return (
       <div>
         <div>
           <Search
@@ -115,13 +132,9 @@ const SearchContainer = React.createClass({
             onSubmit={this.handleSubmit}
             />
         </div>
-
         <div style={display.main.parent} id="content-container">
-
-        <MapComponent coords={this.state.coords} radius={this.state.radius} />
-
-        { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn}/> : null}
-
+          <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} />
+          { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null}
         </div>
       </div>
     )

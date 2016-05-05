@@ -137,7 +137,7 @@ const SearchContainer = React.createClass({
         </div>
         <div style={display.main.parent} id="content-container">
           <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} />
-          { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null}
+          { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
         </div>
       </div>
     )

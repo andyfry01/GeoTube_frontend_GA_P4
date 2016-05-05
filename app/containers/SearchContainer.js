@@ -22,6 +22,9 @@ const SearchContainer = React.createClass({
       zoom: 11
     };
   },
+  componentDidMount: function(){
+    console.log(process.env.GEOTUBE_API_KEY);
+  },
   setZoomLevel: function(radius){
     switch (radius){
       case 8000:

@@ -20,7 +20,8 @@ export default {
     },
     searchHeader: {
       color: "#9e9e9e",
-      textAlign: "center"
+      textAlign: "center",
+      margin: "0 0 5px 0",
     },
     parentDiv: {
       display: "flex",
@@ -105,7 +106,7 @@ export default {
       fontSize: "20px",
       textAlign: "center",
       background: "black",
-      opacity: "0.6",
+      opacity: "0.7",
       borderRadius: "2%",
       padding: "3px"
     },

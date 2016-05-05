@@ -21,12 +21,22 @@ const Favorites = React.createClass({
         returnedFavorites : response,
         showFavoriteComp : true
       })
+      let favorite = returnedFavorites.data.videos.map((obj) => {
+        console.log("in favorite map fxn");
+        let url = "https://www.youtube.com/embed/" + obj.videoId;
+        return (
+          <Favorite
+            url = {url}
+            videoId ={obj.videoId}
+            title = {obj.title}
+            />
+        )
+      })
     })
   },
   render: function(){
-
     return (
-      <div>{this.state.showFavoriteComp ? this.state.returnedFavorites.data.videos[0].title : null}</div>
+      <div>{this.state.showFavoriteComp ? {favorite} : null}</div>
     )
   }
 })

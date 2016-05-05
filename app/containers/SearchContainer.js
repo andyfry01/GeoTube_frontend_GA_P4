@@ -36,8 +36,8 @@ const SearchContainer = React.createClass({
       case 80000:
         this.setState({ zoom: 8 })
         break;
-        default:
-        this.setState({ zoom: 10 })
+      default:
+      this.setState({ zoom: 10 })
     }
   },
 

@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: path.join(__dirname, './app/index.html'),
@@ -15,7 +16,12 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-  plugins: [HtmlWebpackPluginConfig],
+  plugins: [HtmlWebpackPluginConfig,
+    new webpack.DefinePlugin({
+      'process.env': {
+        'GEOTUBE_API_KEY': JSON.stringify(process.env.GEOTUBE_API_KEY)
+      }
+    })],
   module: {
     loaders: [
       {

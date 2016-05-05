@@ -21,7 +21,8 @@ const Videos = React.createClass({
 
         return (
           <Video
-            videoId = {url}
+            url = {url}
+            videoId={obj.videoId}
             title = {obj.title}
           />
         )

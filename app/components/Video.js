@@ -1,6 +1,8 @@
 import React from 'react'
 import display from '../styles/styles';
-import ajaxHelpers from '../utils/ajaxHelpers'
+import ajaxHelpers from '../utils/ajaxHelpers';
+import {Button} from 'react-materialize';
+
 
 const Video = React.createClass({
 
@@ -20,7 +22,7 @@ const Video = React.createClass({
           <h6 style={display.videos.titleInfo}>{this.props.title}</h6>
           <iframe width="720" height="360" src={this.props.url} frameborder="0" allowfullscreen></iframe>
           <br/>
-          <button type="button" onClick={this.addVideo}>Add to favorites</button>
+          <Button id="favoriteButton" onClick={this.addVideo} waves='light'>Add to favorites!</Button>
         </div>
       </div>
     )

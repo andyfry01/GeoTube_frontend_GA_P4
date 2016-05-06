@@ -95,3 +95,18 @@ nav .brand-logo {
     position: relative;
     width: 100%;
 }
+
+#favoriteButton {
+    border: none;
+    border-radius: 2px;
+    margin: -1px 0 6px 0;
+    display: inline-block;
+    height: 36px;
+    width: 100%;
+    line-height: 36px;
+    outline: 0;
+    padding: 0px 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}

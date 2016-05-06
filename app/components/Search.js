@@ -12,7 +12,7 @@ const Search = React.createClass({
           <div id="rowContainer" style={display.search.rowContainer}>
             <Row>
               <div style={display.search.searchSelect}>
-                <Input s={2} onChange={this.props.onChangeCity} label="Search Location" placeholder="ex: 'New York,' 'Russia'" />
+                <Input s={2} onChange={this.props.onChangeCity} label="Search Location" defaultValue="New York" placeholder="ex: 'New York,' 'Russia'" />
                 <Input s={1} type="select" onChange = {this.props.onChangeLive} label="Live or All">
                   <option value="false">All</option>
                   <option value="true">Only live</option>

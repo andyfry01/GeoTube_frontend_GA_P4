@@ -6,11 +6,12 @@ import display from '../styles/styles';
 import {Input, Row, Button} from 'react-materialize';
 import MapComponent from '../components/MapComponent';
 import VideoComponent from '../components/VideoComponent';
+import Error from '../components/Error';
 
 const SearchContainer = React.createClass({
   getInitialState: function() {
     return {
-      city: '',
+      city: 'New York',
       live: false,
       maxResults: 5,
       searchQuery: '',
@@ -19,7 +20,9 @@ const SearchContainer = React.createClass({
       showVideoComp: false,
       coords: {lat: 40.7128, lng: -74.0059},
       radius: 8000,
-      zoom: 11
+      zoom: 11,
+      locationError: '',
+      videoError: ''
     };
   },
   setZoomLevel: function(radius){
@@ -40,7 +43,9 @@ const SearchContainer = React.createClass({
       this.setState({ zoom: 10 })
     }
   },
-
+  componentDidMount: function(){
+    this.handleSubmit()
+  },
   handleMaxResults: function(e){
     this.setState({
       maxResults: e.target.value
@@ -94,6 +99,16 @@ const SearchContainer = React.createClass({
 
       ajaxHelpers.getCoordinates(userInput.city)
       .then(function(response){
+        console.log("response in coord fxn: ", response);
+        if(response.data.status === "ZERO_RESULTS"){
+          alert("no results match, try again")
+          console.log("in if statement for coords");
+          console.log("that is: ", that);
+          that.setState({
+            locationError : 'Sorry, not a valid location.  Please try a new search!',
+            showVideoComp : false
+          })
+        }
         var cityLat = response.data.results[0].geometry.location.lat;
         var cityLong = response.data.results[0].geometry.location.lng;
         that.setState({
@@ -101,6 +116,12 @@ const SearchContainer = React.createClass({
         })
         ajaxHelpers.getVideos(cityLat, cityLong, userInput.searchRadius, userInput.maxResults,userInput.live,userInput.searchQuery)
         .then(function(response){
+          if (response.data.items.length < 1){
+            that.setState({
+              videoError : 'Sorry, no videos matched your current search.  Please alter search terms!',
+              showVideoComp: false
+            })
+          }
           console.log("youtube respone: ", response.data.items);
           let videoData = response.data.items.map(function(result){
             return (
@@ -135,6 +156,8 @@ const SearchContainer = React.createClass({
         <div style={display.main.parent} id="content-container">
           <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} />
           { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
+          { this.state.locationError ? <VideoComponent locationError={this.state.locationError} /> : null }
+          { this.state.videoError ? <VideoComponent videoError={this.state.videoError} /> : null }
         </div>
       </div>
     )

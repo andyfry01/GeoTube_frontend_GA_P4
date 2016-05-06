@@ -143,7 +143,7 @@ const SearchContainer = React.createClass({
   render: function(){
     return (
       <div>
-        <div>
+        <div id="searchContainer" style={display.main.searchContainer}>
           <Search
             onChangeCity={this.handleCity}
             onChangeQuery={this.handleQuery}

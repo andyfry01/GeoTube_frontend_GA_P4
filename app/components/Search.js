@@ -35,7 +35,6 @@ const Search = React.createClass({
           </div>
 
         </div>
-        <hr></hr>
       </div>
     )
   }

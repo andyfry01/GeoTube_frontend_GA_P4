@@ -17,6 +17,7 @@ export default {
       backgroundImage: "url('http://www.freestylephoto.biz/static/images/product/321253.jpg')",
       backgroundSize: "cover",
       margin: "0 auto",
+      height: "18vh"
     },
     searchHeader: {
       color: "#9e9e9e",
@@ -51,10 +52,13 @@ export default {
     parent: {
       display: "flex",
       flexFlow: "row nowrap",
-      height: '72vh',
+      height: '77vh',
       width: '100vw',
       marginTop: "-8px"
     },
+    searchContainer: {
+      height: '16vh'
+    }
   },
   videos: {
     rightDiv: {
@@ -70,10 +74,11 @@ export default {
 
     },
     titleInfo: {
-      margin: '5px auto',
+      margin: '8px auto 5px auto',
       textAlign: 'center',
       fontWeight: 'bold',
-      color: 'red'
+      color: '#ee6e73',
+      fontSize: '16px'
     },
     favorite: {
       textAlign: 'right',

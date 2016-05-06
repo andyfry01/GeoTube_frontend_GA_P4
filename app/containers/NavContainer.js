@@ -5,7 +5,7 @@ import {Link} from 'react-router';
 const NavContainer = React.createClass({
   render(){
     return(
-      <Nav/>
+      <Nav style={{height: '7vh'}}/>
     )
   }
 })

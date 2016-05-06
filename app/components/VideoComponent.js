@@ -14,6 +14,7 @@ const Videos = React.createClass({
 
         return (
           <Video
+            key = {obj.title}
             url = {url}
             videoId={obj.videoId}
             title = {obj.title}

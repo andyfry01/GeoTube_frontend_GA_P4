@@ -22,14 +22,12 @@ const Videos = React.createClass({
       })
 
     return (
-      <div>
-        <ScrollArea
-          smoothScrolling={true}
-          minScrollSize={40}
-          >
-          {video}
-        </ScrollArea>
-      </div>
+      <ScrollArea
+        smoothScrolling={true}
+        minScrollSize={40}
+        >
+        {video}
+      </ScrollArea>
     )
   }
 })

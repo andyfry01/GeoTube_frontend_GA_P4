@@ -89,3 +89,9 @@ nav .brand-logo {
     white-space: nowrap;
     margin-left: 5px;
 }
+
+.scrollarea, .scrollarea-content {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}

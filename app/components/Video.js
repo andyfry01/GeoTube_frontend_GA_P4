@@ -17,7 +17,7 @@ const Video = React.createClass({
     return (
       <div style={display.videos.rightDiv} >
         <div style={display.videos.eachVideoElement}>
-          <h4 style={display.videos.titleInfo}>{this.props.title}</h4>
+          <h6 style={display.videos.titleInfo}>{this.props.title}</h6>
           <iframe width="560" height="280" src={this.props.url} frameborder="0" allowfullscreen></iframe>
           <button type="button" onClick={this.addVideo}>Add to favorites</button>
         </div>

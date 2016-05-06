@@ -101,6 +101,7 @@ const SearchContainer = React.createClass({
       .then(function(response){
         console.log("response in coord fxn: ", response);
         if(response.data.status === "ZERO_RESULTS"){
+          alert("no results match, try again")
           console.log("in if statement for coords");
           console.log("that is: ", that);
           that.setState({

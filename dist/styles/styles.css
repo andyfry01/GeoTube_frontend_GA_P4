@@ -1,0 +1,142 @@
+.favoriteLink:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.favoriteLink {
+  text-align: right;
+  color: red;
+}
+
+body {
+  font-family: Garamond, sans-serif;
+}
+
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+    background-color: transparent;
+    border: none;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    outline: none;
+    height: 2.5rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 5px 0 15px 0;
+    padding-left: 5px;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all .3s;
+  }
+
+.select-wrapper input.select-dropdown {
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    color: #9e9e9e;;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    outline: none;
+    height: 2.5rem;
+    line-height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 5px 0 15px 0;
+    padding-left: 5px;
+    display: block;
+}
+
+.content-container {
+  margin-top: -5px;
+}
+
+.btn, .btn-large, .btn-flat {
+    border: none;
+    border-radius: 2px;
+    margin: 20px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    outline: 0;
+    padding: 0px 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.row {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.input-field label {
+    color: #9e9e9e;
+    position: absolute;
+    top: 0.8rem;
+    left: 0.75rem;
+    font-size: 1rem;
+    cursor: text;
+    transition: .2s ease-out;
+    padding-left: 5px;
+}
+
+nav .brand-logo {
+    position: absolute;
+    color: #fff;
+    display: inline-block;
+    font-size: 2.1rem;
+    padding: 0;
+    white-space: nowrap;
+    margin-left: 5px;
+}
+
+.scrollarea, .scrollarea-content {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+#favoriteButton {
+    border: none;
+    border-radius: 2px;
+    margin: 1px 0 10px 0;
+    display: inline-block;
+    height: 36px;
+    width: 100%;
+    line-height: 36px;
+    outline: 0;
+    padding: 0px 2rem;
+    background: #ee6e73;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#removeButton {
+    border: none;
+    border-radius: 2px;
+    margin: 1px 0 10px 0;
+    display: inline-block;
+    height: 36px;
+    width: 100%;
+    line-height: 36px;
+    outline: 0;
+    padding: 0px 2rem;
+    background: #ee6e73;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+#favorite-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: rgb(229, 227, 223);
+}
+
+.individual-video {
+  margin-top: 10px;
+  width: 460px;
+}

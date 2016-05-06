@@ -90,13 +90,14 @@ export default {
     contentContainer: {
       display: "flex",
       flexFlow: "row nowrap",
+      height: '93vh'
     },
     leftCol: {
       width: "20%",
       minHeight: "80vh",
       backgroundImage: "url('/app/images/seanNewGeoTube.jpg')",
       backgroundSize: "cover",
-      position: "center "
+      backgroundPosition: "center"
     },
     centerCol: {
       width: "60%",
@@ -110,10 +111,12 @@ export default {
     topInfo: {
       marginRight: "15%",
       marginLeft: "3%",
+      marginTop: "-11%",
     },
     bottomInfo: {
       marginLeft: "15%",
-      marginRight: "3%"
+      marginRight: "3%",
+      marginTop: "-10%"
     },
     infoPar: {
       color: "white",
@@ -121,10 +124,9 @@ export default {
       fontSize: "20px",
       textAlign: "center",
       background: "black",
-      opacity: "0.7",
+      opacity: "0.75",
       borderRadius: "2%",
-      paddingLeft: "8px",
-      paddingRight: "8px"
+      padding: "3px 3px 3px 3px"
     },
     p: {
       opacity: "1"

@@ -11,8 +11,9 @@ const MapComponent = React.createClass({
         containerElement={
           <div
             style={{
-              height: '72vh',
-              minWidth: '50vw'
+              height: '77vh',
+              minWidth: '50vw',
+              borderTop: '1px solid black'
             }}
           />
         }

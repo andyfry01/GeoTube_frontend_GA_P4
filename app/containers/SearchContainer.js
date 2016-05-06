@@ -106,7 +106,6 @@ const SearchContainer = React.createClass({
           console.log("that is: ", that);
           that.setState({
             locationError : 'Sorry, not a valid location.  Please try a new search!',
-            showVideoComp : false
           })
         }
         var cityLat = response.data.results[0].geometry.location.lat;
@@ -116,12 +115,6 @@ const SearchContainer = React.createClass({
         })
         ajaxHelpers.getVideos(cityLat, cityLong, userInput.searchRadius, userInput.maxResults,userInput.live,userInput.searchQuery)
         .then(function(response){
-          if (response.data.items.length < 1){
-            that.setState({
-              videoError : 'Sorry, no videos matched your current search.  Please alter search terms!',
-              showVideoComp: false
-            })
-          }
           console.log("youtube respone: ", response.data.items);
           let videoData = response.data.items.map(function(result){
             return (
@@ -143,7 +136,7 @@ const SearchContainer = React.createClass({
   render: function(){
     return (
       <div>
-        <div>
+        <div id="searchContainer" style={display.main.searchContainer}>
           <Search
             onChangeCity={this.handleCity}
             onChangeQuery={this.handleQuery}

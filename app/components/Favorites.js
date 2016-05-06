@@ -1,13 +1,18 @@
-import React from 'react'
+import React from 'react';
+import ajaxHelpers from '../utils/ajaxHelpers';
 import display from '../styles/styles';
-import ajaxHelpers from '../utils/ajaxHelpers'
+import {Button} from 'react-materialize';
+
+
 
 const Favorites = React.createClass({
   render: function() {
     return (
       <div>
-        <h4>{this.props.title}</h4>
-        <iframe width="560" height="280" src={this.props.url} frameborder="0" allowfullscreen></iframe>
+        <div className="individual-video">
+          <iframe width="460" height="230" src={this.props.url} frameborder="0" allowfullscreen></iframe>
+          <Button id="removeButton" waves='light'>Remove from favorites!</Button>
+        </div>
       </div>
     )
   }

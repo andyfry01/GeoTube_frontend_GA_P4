@@ -2,7 +2,6 @@ import React from 'react';
 import display from '../styles/styles';
 import {Input, Row, Button, Icon} from 'react-materialize';
 
-
 const Search = React.createClass({
   render: function(){
     return(
@@ -36,7 +35,6 @@ const Search = React.createClass({
           </div>
 
         </div>
-        <hr></hr>
       </div>
     )
   }

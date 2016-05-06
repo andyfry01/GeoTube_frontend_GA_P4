@@ -17,6 +17,7 @@ export default {
       backgroundImage: "url('http://www.freestylephoto.biz/static/images/product/321253.jpg')",
       backgroundSize: "cover",
       margin: "0 auto",
+      height: "18vh"
     },
     searchHeader: {
       color: "#9e9e9e",
@@ -51,10 +52,13 @@ export default {
     parent: {
       display: "flex",
       flexFlow: "row nowrap",
-      height: '72vh',
+      height: '77vh',
       width: '100vw',
       marginTop: "-8px"
     },
+    searchContainer: {
+      height: '16vh'
+    }
   },
   videos: {
     rightDiv: {
@@ -70,10 +74,11 @@ export default {
 
     },
     titleInfo: {
-      margin: '5px auto',
+      margin: '8px auto 5px auto',
       textAlign: 'center',
       fontWeight: 'bold',
-      color: 'red'
+      color: '#ee6e73',
+      fontSize: '16px'
     },
     favorite: {
       textAlign: 'right',
@@ -85,13 +90,14 @@ export default {
     contentContainer: {
       display: "flex",
       flexFlow: "row nowrap",
+      height: '93vh'
     },
     leftCol: {
       width: "20%",
       minHeight: "80vh",
       backgroundImage: "url('/app/images/seanNewGeoTube.jpg')",
       backgroundSize: "cover",
-      position: "center "
+      backgroundPosition: "center"
     },
     centerCol: {
       width: "60%",
@@ -105,10 +111,12 @@ export default {
     topInfo: {
       marginRight: "15%",
       marginLeft: "3%",
+      marginTop: "-11%",
     },
     bottomInfo: {
       marginLeft: "15%",
-      marginRight: "3%"
+      marginRight: "3%",
+      marginTop: "-10%"
     },
     infoPar: {
       color: "white",
@@ -116,10 +124,9 @@ export default {
       fontSize: "20px",
       textAlign: "center",
       background: "black",
-      opacity: "0.7",
+      opacity: "0.75",
       borderRadius: "2%",
-      paddingLeft: "8px",
-      paddingRight: "8px"
+      padding: "3px 3px 3px 3px"
     },
     p: {
       opacity: "1"

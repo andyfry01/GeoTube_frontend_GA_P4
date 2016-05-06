@@ -95,3 +95,48 @@ nav .brand-logo {
     position: relative;
     width: 100%;
 }
+
+#favoriteButton {
+    border: none;
+    border-radius: 2px;
+    margin: 1px 0 10px 0;
+    display: inline-block;
+    height: 36px;
+    width: 100%;
+    line-height: 36px;
+    outline: 0;
+    padding: 0px 2rem;
+    background: #ee6e73;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#removeButton {
+    border: none;
+    border-radius: 2px;
+    margin: 1px 0 10px 0;
+    display: inline-block;
+    height: 36px;
+    width: 100%;
+    line-height: 36px;
+    outline: 0;
+    padding: 0px 2rem;
+    background: #ee6e73;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+#favorite-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: rgb(229, 227, 223);
+}
+
+.individual-video {
+  margin-top: 10px;
+  width: 460px;
+}

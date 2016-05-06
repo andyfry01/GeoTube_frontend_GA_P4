@@ -37,6 +37,12 @@ const helpers = {
     .then(function(response){
       console.log('response from DB when posting video:', response);
     })
+  },
+  deleteVideo: function(id) {
+    return axios.delete('http://localhost:3000/videos/:' + id)
+    .then(function(response){
+      console.log("deleting video: ", response);
+    })
   }
 
 }

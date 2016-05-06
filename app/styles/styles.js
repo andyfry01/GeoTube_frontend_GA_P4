@@ -51,7 +51,7 @@ export default {
     parent: {
       display: "flex",
       flexFlow: "row nowrap",
-      height: '50vh',
+      height: '72vh',
       width: '100vw',
       marginTop: "-8px"
     },
@@ -59,6 +59,7 @@ export default {
   videos: {
     rightDiv: {
       border: "1px solid black",
+      background: "#F2EEE5",
       display: "flex",
       flexFlow: "row nowrap",
       justifyContent: "center",

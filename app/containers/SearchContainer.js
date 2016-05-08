@@ -21,8 +21,9 @@ const SearchContainer = React.createClass({
       coords: {lat: 40.7128, lng: -74.0059},
       radius: 8000,
       zoom: 11,
-      locationError: '',
-      videoError: ''
+      locationError: "",
+      videoError: "",
+      showError: false
     };
   },
   setZoomLevel: function(radius){
@@ -88,48 +89,53 @@ const SearchContainer = React.createClass({
       maxResults: this.state.maxResults,
       searchRadius: this.state.searchRadius,
     };
-    console.log("user input is", userInput);
     if(!userInput.city){
-      alert("userInput", userInput)
-      // alert("Please enter in a city!");
     } else {
-      console.log("userInput: ", userInput);
 
       var that = this;
 
       ajaxHelpers.getCoordinates(userInput.city)
       .then(function(response){
-        console.log("response in coord fxn: ", response);
         if(response.data.status === "ZERO_RESULTS"){
-          alert("no results match, try again")
-          console.log("in if statement for coords");
-          console.log("that is: ", that);
+          console.log("no results");
           that.setState({
             locationError : 'Sorry, not a valid location.  Please try a new search!',
           })
+          that.setState({ showError : true })
         }
-        var cityLat = response.data.results[0].geometry.location.lat;
-        var cityLong = response.data.results[0].geometry.location.lng;
-        that.setState({
-          coords: {lat: cityLat, lng: cityLong}
-        })
-        ajaxHelpers.getVideos(cityLat, cityLong, userInput.searchRadius, userInput.maxResults,userInput.live,userInput.searchQuery)
-        .then(function(response){
-          console.log("youtube respone: ", response.data.items);
-          let videoData = response.data.items.map(function(result){
-            return (
-              {
-                videoId : result.id.videoId,
-                title : result.snippet.title
-              }
-            )
-          })
+        if (response.data.status == "OK") {
+          that.setState({ locationError: "" })
+          that.setState({ showError : false })
+          console.log(response.data.results);
+          var cityLat = response.data.results[0].geometry.location.lat;
+          var cityLong = response.data.results[0].geometry.location.lng;
           that.setState({
-            ajaxReturn : videoData
+            coords: {lat: cityLat, lng: cityLong}
           })
-          console.log("ajaxReturn here: ", that.state.ajaxReturn);
-          that.setState({showVideoComp : true});
-        })
+          ajaxHelpers.getVideos(cityLat, cityLong, userInput.searchRadius, userInput.maxResults,userInput.live,userInput.searchQuery)
+          .then(function(response){
+            if (response.data.items.length < 1) {
+              that.setState({ videoError : 'Sorry, no results were returned for your search query.' })
+              that.setState({ showError : true })
+            }
+            if (response.data.items.length > 1) {
+              that.setState({ videoError: "" })
+              that.setState({ showError: false })
+              let videoData = response.data.items.map(function(result){
+                return (
+                  {
+                    videoId : result.id.videoId,
+                    title : result.snippet.title
+                  }
+                )
+              })
+              that.setState({
+                ajaxReturn : videoData
+              })
+              that.setState({ showVideoComp : true });
+            }
+          })
+        }
       })
     }
   },
@@ -146,11 +152,10 @@ const SearchContainer = React.createClass({
             onSubmit={this.handleSubmit}
             />
         </div>
+        { this.state.showError ? <Error locationError={this.state.locationError} videoError={this.state.videoError} /> : null }
         <div style={display.main.parent} id="content-container">
           <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} />
           { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
-          { this.state.locationError ? <VideoComponent locationError={this.state.locationError} /> : null }
-          { this.state.videoError ? <VideoComponent videoError={this.state.videoError} /> : null }
         </div>
       </div>
     )

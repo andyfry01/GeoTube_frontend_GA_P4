@@ -8,25 +8,19 @@ import Video from './Video'
 
 const Videos = React.createClass({
   render: function(){
-    if (this.props.ajaxReturn.length > 0) {
-      let video = this.props.ajaxReturn.map((obj) => {
+    let video = this.props.ajaxReturn.map((obj) => {
       let url = "https://www.youtube.com/embed/" + obj.videoId;
 
-        return (
-          <Video
-            key = {obj.title}
-            url = {url}
-            videoId={obj.videoId}
-            title = {obj.title}
-          />
-        )
-      })
-    }
-    else {
       return (
-        <h1>Sorry, no videos were found with the specified search terms.</h1>
+        <Video
+          key = {obj.title}
+          url = {url}
+          videoId={obj.videoId}
+          title = {obj.title}
+          />
       )
-    }
+    })
+
     return (
       <ScrollArea
         smoothScrolling={true}

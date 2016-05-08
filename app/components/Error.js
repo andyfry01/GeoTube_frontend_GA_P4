@@ -7,7 +7,6 @@ const Error = React.createClass({
       <div>
         <h2>{this.props.locationError}</h2>
         <h2>{this.props.videoError}</h2>
-
       </div>
     )
   }

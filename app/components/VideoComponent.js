@@ -8,8 +8,8 @@ import Video from './Video'
 
 const Videos = React.createClass({
   render: function(){
-
-    let video = this.props.ajaxReturn.map((obj) => {
+    if (this.props.ajaxReturn.length > 0) {
+      let video = this.props.ajaxReturn.map((obj) => {
       let url = "https://www.youtube.com/embed/" + obj.videoId;
 
         return (
@@ -21,7 +21,12 @@ const Videos = React.createClass({
           />
         )
       })
-
+    }
+    else {
+      return (
+        <h1>Sorry, no videos were found with the specified search terms.</h1>
+      )
+    }
     return (
       <ScrollArea
         smoothScrolling={true}

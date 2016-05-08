@@ -20,7 +20,7 @@ const About = React.createClass({
 
           <div id="bottomInfo" style={display.about.bottomInfo}>
             <div id="andyInfo" style={display.about.infoPar}>
-              <p style={display.about.p}>Andy is an acapella rocking, bike riding, new restaraunt exploring dude.  He graduated from Ithaca College and is currently making sweet new apps with his fancy developer skills.  With an infectious laugh, jolly demeanor, and soothing baritone voice, Andy is a crowd favorite wherever he winds up.  </p>
+              <p style={display.about.p}>Andy is a bike riding, guitar playing, outdoors exploring guy. He graduated from Ithaca College with a B.A. in English and German, which led him to Hamburg, Germany as a Fulbright English Teaching Assistant and gave him a lifelong love for travel and new experiences. When he's not coding apps you can find him daydreaming up his next adventure!</p>
             </div>
           </div>
 

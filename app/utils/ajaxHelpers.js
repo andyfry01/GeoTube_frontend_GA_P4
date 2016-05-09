@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const helpers = {
   getFavorites: function(){
-    return axios.get('http://localhost:3000/videos.json');
+    return axios.get('http://floating-reef-82228.herokuapp.com/videos.json');
   },
   getCoordinates: function(city){
     return axios.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + '&key=' + process.env.GEOTUBE_API_KEY);

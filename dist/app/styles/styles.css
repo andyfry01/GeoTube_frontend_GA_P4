@@ -140,3 +140,8 @@ nav .brand-logo {
   margin-top: 10px;
   width: 460px;
 }
+
+#favorite-wrapper {
+    min-height: 93vh;
+    background-color: rgb(229, 227, 223);
+}

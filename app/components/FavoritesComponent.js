@@ -25,7 +25,7 @@ const FavoritesComponent = React.createClass({
   },
   render: function(){
     return (
-      <div>{this.state.showFavoriteComp ? <FavoriteVideo returnedFavorites={this.state.returnedFavorites} /> : null}</div>
+      <div id="favorite-wrapper">{this.state.showFavoriteComp ? <FavoriteVideo returnedFavorites={this.state.returnedFavorites} /> : null}</div>
     )
   }
 })

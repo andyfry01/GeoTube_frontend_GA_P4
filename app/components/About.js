@@ -1,6 +1,5 @@
 import React from 'react';
 import display from '../styles/styles';
-// <img src="/app/images/seanNewGeoTube.jpg"/>
 
 const About = React.createClass({
   render: function() {

@@ -14,12 +14,10 @@ const Favorites = React.createClass({
   },
   render: function() {
     return (
-      <div>
         <div className="individual-video">
           <iframe width="460" height="230" src={this.props.url} frameborder="0" allowfullscreen></iframe>
           <Button id="removeButton" waves='light' onClick={this.deleteVideo}>Remove from favorites!</Button>
         </div>
-      </div>
     )
   }
 })

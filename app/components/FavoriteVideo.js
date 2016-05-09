@@ -11,7 +11,7 @@ const FavoriteVideo = React.createClass({
       let url = "https://www.youtube.com/embed/" + obj.videoId;
         return (
           <Favorites
-            id ={obj.videoId}
+            id ={obj.id}
             url = {url}
             videoId={obj.videoId}
             title = {obj.title}

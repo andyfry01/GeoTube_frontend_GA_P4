@@ -39,7 +39,7 @@ const helpers = {
     })
   },
   deleteVideo: function(id) {
-    return axios.delete('http://floating-reef-82228.herokuapp.com/videos/:' + id)
+    return axios.delete('http://floating-reef-82228.herokuapp.com/videos/' + id)
     .then(function(response){
       console.log("deleting video: ", response);
     })

@@ -8,19 +8,18 @@ import Video from './Video'
 
 const Videos = React.createClass({
   render: function(){
-
     let video = this.props.ajaxReturn.map((obj) => {
       let url = "https://www.youtube.com/embed/" + obj.videoId;
 
-        return (
-          <Video
-            key = {obj.title}
-            url = {url}
-            videoId={obj.videoId}
-            title = {obj.title}
+      return (
+        <Video
+          key = {obj.title}
+          url = {url}
+          videoId={obj.videoId}
+          title = {obj.title}
           />
-        )
-      })
+      )
+    })
 
     return (
       <ScrollArea

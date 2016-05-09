@@ -14,7 +14,7 @@ export default {
   },
   search: {
     mainDiv: {
-      backgroundImage: "url('http://www.freestylephoto.biz/static/images/product/321253.jpg')",
+      backgroundColor: "#F2EEE4",
       backgroundSize: "cover",
       margin: "0 auto",
       height: "18vh"
@@ -23,6 +23,7 @@ export default {
       color: "#9e9e9e",
       textAlign: "center",
       margin: "5px 0 10px 0",
+      backgroundColor: "#F2EEE4"
     },
     rowContainer: {
       display: "flex",

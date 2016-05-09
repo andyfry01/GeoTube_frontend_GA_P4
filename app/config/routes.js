@@ -18,8 +18,8 @@ const routes = (
   <Router history={browserHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Home} />
-      <Route path='/About' component={About} />
-      <Route path='/Favorites' component={FavoritesComponent} />
+      <Route path='About' component={About} />
+      <Route path='Favorites' component={FavoritesComponent} />
     </Route>
   </Router>
 )

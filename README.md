@@ -18,4 +18,4 @@ YouTube API research, designing functionality/user experience,
 Initial react framework, React Router, implementing react-materialize and other css, Video embedding and component, Google's geo-encoding API, Search Component, About Component,
 
 #### Andy Fry:
-Rails setup and framework, Backend routes, Google Maps API, Map Component, React-Scroll implementation, Favorites Component
+Rails setup and framework, Heroku deployment Backend routes, Google Maps API, Map Component, React-Scroll implementation, Favorites Component

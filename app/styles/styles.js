@@ -49,6 +49,11 @@ export default {
       backgroundColor: "red"
     }
   },
+  map: {
+    height: '77vh',
+    minWidth: '50vw',
+    borderTop: '1px solid black'
+  },
   main: {
     parent: {
       display: "flex",

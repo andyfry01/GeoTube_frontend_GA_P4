@@ -1,5 +1,6 @@
 import React from 'react'
 import { GoogleMapLoader, GoogleMap } from 'react-google-maps'
+import display from '../styles/styles.js'
 import Circle from "../../node_modules/react-google-maps/lib/Circle"
 
 const MapComponent = React.createClass({
@@ -10,11 +11,7 @@ const MapComponent = React.createClass({
       <GoogleMapLoader
         containerElement={
           <div
-            style={{
-              height: '77vh',
-              minWidth: '50vw',
-              borderTop: '1px solid black'
-            }}
+            style={display.map}
           />
         }
 

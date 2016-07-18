@@ -2,11 +2,12 @@ import React from 'react';
 import SearchContainer from '../containers/SearchContainer';
 import display from '../styles/styles';
 import styles from '../styles/styles.css';
-import ScrollArea from 'react-scrollbar';
+import { Scrollbars } from 'react-custom-scrollbars';
 import ajaxHelpers from '../utils/ajaxHelpers'
 import Video from './Video'
 
 const Videos = React.createClass({
+
   render: function(){
     let video = this.props.ajaxReturn.map((obj) => {
       let url = "https://www.youtube.com/embed/" + obj.videoId;
@@ -22,12 +23,11 @@ const Videos = React.createClass({
     })
 
     return (
-      <ScrollArea
-        smoothScrolling={true}
-        minScrollSize={40}
+      <Scrollbars
         >
         {video}
-      </ScrollArea>
+      </Scrollbars>
+
     )
   }
 })

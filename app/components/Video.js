@@ -7,7 +7,6 @@ import {Button} from 'react-materialize';
 const Video = React.createClass({
 
   addVideo: function(){
-    console.log("HI!");
     return ajaxHelpers.addVideo(this.props.videoId, this.props.title)
     .then(function(response){
       console.log(response);

@@ -9,6 +9,7 @@ import VideoComponent from '../components/VideoComponent';
 import Error from '../components/Error';
 
 const SearchContainer = React.createClass({
+
   getInitialState: function() {
     return {
       city: 'New York',
@@ -26,6 +27,8 @@ const SearchContainer = React.createClass({
       showError: false
     };
   },
+
+  // Sets zoom level for map depending on search radius size
   setZoomLevel: function(radius){
     switch (radius){
       case 8000:
@@ -44,9 +47,13 @@ const SearchContainer = React.createClass({
       this.setState({ zoom: 10 })
     }
   },
+
+  // Runs initial search to return results for NYC when page loads
   componentDidMount: function(){
     this.handleSubmit()
   },
+
+  // Event handlers for searhbars
   handleMaxResults: function(e){
     this.setState({
       maxResults: e.target.value
@@ -74,12 +81,15 @@ const SearchContainer = React.createClass({
     })
     this.setZoomLevel(this.state.radius)
   },
+
+  // Shows the video component containing the video results if there are results to show, otherwise null is returned (see render fxn)
   showVideo: function(){
     this.setState({
       showVideoComp: true
     })
   },
 
+  // Passes search info to YouTube API to generate list of results
   handleSubmit: function(){
 
     const userInput = {

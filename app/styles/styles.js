@@ -17,7 +17,7 @@ export default {
       backgroundColor: "#F2EEE4",
       backgroundSize: "cover",
       margin: "0 auto",
-      height: "18vh"
+      height: "auto"
     },
     searchHeader: {
       color: "#9e9e9e",
@@ -29,11 +29,6 @@ export default {
       display: "flex",
       flexFlow: "row",
       justifyContent: "space-around"
-    },
-    parentDiv: {
-      display: "flex",
-      flexFlow: "row wrap",
-      justifyContent: "space-between"
     },
     searchPara: {
       margin: "0px 0px 5px 0px",

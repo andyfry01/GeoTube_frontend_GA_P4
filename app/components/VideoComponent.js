@@ -28,7 +28,11 @@ const Videos = React.createClass({
 
     return (
       <div>
-        {video}
+        <Row>
+          <Col sm={6}>
+            {video}
+          </Col>
+        </Row>
       </div>
 
     )

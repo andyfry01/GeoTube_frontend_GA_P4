@@ -2,6 +2,9 @@ import React from 'react';
 import SearchContainer from '../containers/SearchContainer';
 import display from '../styles/styles';
 import { Scrollbars } from 'react-custom-scrollbars';
+import { Row, Col } from 'react-bootstrap';
+
+
 import ajaxHelpers from '../utils/ajaxHelpers'
 import Video from './Video'
 
@@ -12,20 +15,21 @@ const Videos = React.createClass({
       let url = "https://www.youtube.com/embed/" + obj.videoId;
 
       return (
-        <Video
-          key = {obj.title}
-          url = {url}
-          videoId={obj.videoId}
-          title = {obj.title}
-          />
+        <div>
+          <Video
+            key={obj.title}
+            url={url}
+            videoId={obj.videoId}
+            title={obj.title}
+            />
+        </div>
       )
     })
 
     return (
-      <Scrollbars
-        >
+      <div>
         {video}
-      </Scrollbars>
+      </div>
 
     )
   }

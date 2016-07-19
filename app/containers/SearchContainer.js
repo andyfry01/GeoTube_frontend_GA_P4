@@ -6,6 +6,7 @@ import ajaxHelpers from "../utils/ajaxHelpers";
 // Styling, styling components, and media query components
 import display from '../styles/styles';
 // import { Something } from 'react-bootstrap';
+import { Row, Col, Tabs, Tab } from 'react-bootstrap'
 
 // Components
 import Search from "../components/Search";
@@ -162,23 +163,32 @@ const SearchContainer = React.createClass({
   // Renders components depending on media queries.
   render: function(){
     return (
-      // Case one: mobile screen
       <div>
-        <div id="searchContainer" style={null}>
-          <Search
-            onChangeCity={this.handleCity}
-            onChangeQuery={this.handleQuery}
-            onChangeLive={this.handleLive}
-            onChangeMaxResults={this.handleMaxResults}
-            onChangeRadius={this.handleRadius}
-            onSubmit={this.handleSubmit}
-            />
-        </div>
         { this.state.showError ? <Error locationError={this.state.locationError} videoError={this.state.videoError} /> : null }
-        <div style={null} id="content-container">
-          <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} />
-          { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
-        </div>
+
+        <Tabs id="page-options">
+          <Tab eventKey={1} title="Search">
+            <Search
+              onChangeCity={this.handleCity}
+              onChangeQuery={this.handleQuery}
+              onChangeLive={this.handleLive}
+              onChangeMaxResults={this.handleMaxResults}
+              onChangeRadius={this.handleRadius}
+              onSubmit={this.handleSubmit}
+              />
+          </Tab>
+          <Tab eventKey={2} title="View Map">
+
+            <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} />
+
+          </Tab>
+          <Tab eventKey={3} title="Browse Videos">
+
+            { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
+
+          </Tab>
+        </Tabs>
+
       </div>
 
 

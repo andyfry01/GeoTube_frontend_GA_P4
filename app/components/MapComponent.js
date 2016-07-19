@@ -11,7 +11,10 @@ const MapComponent = React.createClass({
       <GoogleMapLoader
         containerElement={
           <div
-            style={null}
+            style={ {height: '77vh',
+                    minWidth: '50vw',
+                    borderTop: '1px solid black'}
+                  }
           />
         }
 

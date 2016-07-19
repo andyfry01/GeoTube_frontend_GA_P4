@@ -1,6 +1,5 @@
 import React from 'react';
 import display from '../styles/styles';
-import styles from '../styles/styles.css';
 import ajaxHelpers from '../utils/ajaxHelpers';
 import FavoriteVideo from './FavoriteVideo'
 

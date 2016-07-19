@@ -1,7 +1,6 @@
 import React from 'react'
 import display from '../styles/styles';
 import ajaxHelpers from '../utils/ajaxHelpers';
-import {Button} from 'react-materialize';
 
 
 const Video = React.createClass({
@@ -16,12 +15,12 @@ const Video = React.createClass({
   render: function() {
 
     return (
-      <div style={display.videos.rightDiv}  >
-        <div style={display.videos.eachVideoElement}>
-          <h6 style={display.videos.titleInfo}>{this.props.title}</h6>
+      <div style={null}  >
+        <div style={null}>
+          <h6 style={null}>{this.props.title}</h6>
           <iframe width="720" height="360" src={this.props.url} frameborder="0" allowfullscreen></iframe>
           <br/>
-          <Button id="favoriteButton" onClick={this.addVideo} waves='light'>Add to favorites!</Button>
+          <button id="favoritebutton" onClick={this.addVideo}>Add to favorites!</button>
         </div>
       </div>
     )

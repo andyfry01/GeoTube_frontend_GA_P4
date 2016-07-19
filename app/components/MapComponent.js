@@ -11,7 +11,7 @@ const MapComponent = React.createClass({
       <GoogleMapLoader
         containerElement={
           <div
-            style={display.map}
+            style={null}
           />
         }
 

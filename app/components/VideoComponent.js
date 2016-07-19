@@ -1,7 +1,6 @@
 import React from 'react';
 import SearchContainer from '../containers/SearchContainer';
 import display from '../styles/styles';
-import styles from '../styles/styles.css';
 import { Scrollbars } from 'react-custom-scrollbars';
 import ajaxHelpers from '../utils/ajaxHelpers'
 import Video from './Video'

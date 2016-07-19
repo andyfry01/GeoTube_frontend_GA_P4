@@ -3,7 +3,6 @@ import Search from "../components/Search";
 import axios from 'axios';
 import ajaxHelpers from "../utils/ajaxHelpers";
 import display from '../styles/styles';
-import {Input, Row, Button} from 'react-materialize';
 import MapComponent from '../components/MapComponent';
 import VideoComponent from '../components/VideoComponent';
 import Error from '../components/Error';
@@ -152,7 +151,7 @@ const SearchContainer = React.createClass({
   render: function(){
     return (
       <div>
-        <div id="searchContainer" style={display.main.searchContainer}>
+        <div id="searchContainer" style={null}>
           <Search
             onChangeCity={this.handleCity}
             onChangeQuery={this.handleQuery}
@@ -163,7 +162,7 @@ const SearchContainer = React.createClass({
             />
         </div>
         { this.state.showError ? <Error locationError={this.state.locationError} videoError={this.state.videoError} /> : null }
-        <div style={display.main.parent} id="content-container">
+        <div style={null} id="content-container">
           <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} />
           { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
         </div>

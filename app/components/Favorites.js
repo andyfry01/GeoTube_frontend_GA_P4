@@ -1,8 +1,6 @@
 import React from 'react';
 import ajaxHelpers from '../utils/ajaxHelpers';
 import display from '../styles/styles';
-import {Button} from 'react-materialize';
-
 
 
 const Favorites = React.createClass({
@@ -16,7 +14,7 @@ const Favorites = React.createClass({
     return (
         <div className="individual-video">
           <iframe width="460" height="230" src={this.props.url} frameborder="0" allowfullscreen></iframe>
-          <Button id="removeButton" waves='light' onClick={this.deleteVideo}>Remove from favorites!</Button>
+          <button id="removeButton" onClick={this.deleteVideo}>Remove from favorites!</button>
         </div>
     )
   }

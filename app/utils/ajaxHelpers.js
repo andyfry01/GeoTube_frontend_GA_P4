@@ -1,12 +1,18 @@
 import axios from 'axios';
 
 const helpers = {
+
+  // Returns favorited videos
   getFavorites: function(){
     return axios.get('http://floating-reef-82228.herokuapp.com/videos.json');
   },
+
+  // Converts city names into coordinates for YouTube API search
   getCoordinates: function(city){
     return axios.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + '&key=' + process.env.GEOTUBE_API_KEY);
   },
+
+  // Searches YouTube API for videos within the specified search area
   getVideos: function(latParam,longParam,radiusParam,maxResultsParam,liveBooleanParam, queryParam){
     var radius = '&locationRadius=' + radiusParam;
     var maxResults = '&maxResults=' + maxResultsParam;
@@ -32,12 +38,16 @@ const helpers = {
     var searchQuery = "https://www.googleapis.com/youtube/v3/search?part=snippet" + coords + radius + live + query + maxResults + '&order=viewCount&type=video&key=' + process.env.GEOTUBE_API_KEY;
     return axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet' + coords + radius + live + query + maxResults + '&order=viewCount&type=video&key=' + process.env.GEOTUBE_API_KEY);
   },
+
+  // Adds video to favorites
   addVideo: function(videoId, title) {
     return axios.post('http://floating-reef-82228.herokuapp.com/videos?videoId=' + videoId + '&title=' + title)
     .then(function(response){
       console.log('response from DB when posting video:', response);
     })
   },
+
+  //Deletes video from favorites
   deleteVideo: function(id) {
     return axios.delete('http://floating-reef-82228.herokuapp.com/videos/' + id)
     .then(function(response){

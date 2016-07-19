@@ -1,14 +1,21 @@
+// React + AJAX
 import React from "react";
-import Search from "../components/Search";
 import axios from 'axios';
 import ajaxHelpers from "../utils/ajaxHelpers";
+
+// Styling, styling components, and media query components
 import display from '../styles/styles';
+// import { Something } from 'react-bootstrap';
+
+// Components
+import Search from "../components/Search";
 import MapComponent from '../components/MapComponent';
 import VideoComponent from '../components/VideoComponent';
 import Error from '../components/Error';
 
 const SearchContainer = React.createClass({
 
+  // Sets initial state for search info to NYC, sets map defaults, and also sets showVideoComp to false until there are videos to display
   getInitialState: function() {
     return {
       city: 'New York',
@@ -17,17 +24,19 @@ const SearchContainer = React.createClass({
       searchQuery: '',
       searchRadius: '5mi',
       ajaxReturn: '',
-      showVideoComp: false,
+
       coords: {lat: 40.7128, lng: -74.0059},
       radius: 8000,
       zoom: 11,
+
       locationError: "",
       videoError: "",
-      showError: false
+      showError: false,
+      showVideoComp: false
     };
   },
 
-  // Sets zoom level for map depending on search radius size
+  // Sets zoom level for map depending on search radius size (case statements are in meters, get passed into google maps)
   setZoomLevel: function(radius){
     switch (radius){
       case 8000:
@@ -52,7 +61,7 @@ const SearchContainer = React.createClass({
     this.handleSubmit()
   },
 
-  // Event handlers for searhbars
+  // Event handlers for search inputs
   handleMaxResults: function(e){
     this.setState({
       maxResults: e.target.value
@@ -98,7 +107,8 @@ const SearchContainer = React.createClass({
       maxResults: this.state.maxResults,
       searchRadius: this.state.searchRadius,
     };
-    if(!userInput.city){
+    // What was this for I wonder....
+    if(!userInput.city) {
     } else {
 
       var that = this;
@@ -148,8 +158,11 @@ const SearchContainer = React.createClass({
       })
     }
   },
+
+  // Renders components depending on media queries.
   render: function(){
     return (
+      // Case one: mobile screen
       <div>
         <div id="searchContainer" style={null}>
           <Search
@@ -167,6 +180,10 @@ const SearchContainer = React.createClass({
           { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
         </div>
       </div>
+
+
+      // Case two: desktop screen
+      // Fill in code here.
     )
   }
 })

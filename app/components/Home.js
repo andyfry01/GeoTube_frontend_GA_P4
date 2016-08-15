@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchContainer from '../containers/SearchContainer';
 import axios from 'axios';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 import ajaxHelpers from "../utils/ajaxHelpers";
 import display from '../styles/styles';
 

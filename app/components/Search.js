@@ -1,7 +1,7 @@
 // The basics
 import React from 'react';
 
-// Display info
+// Styling
 import DISPLAY from '../styles/styles';
 import { Grid, Row, Col, Button, Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
@@ -11,8 +11,7 @@ const Search = React.createClass({
       <div>
 
       <Row>
-        <h1 style={null} className="text-center">GeoTube</h1>
-        <h2 style={null} className="text-center">A geolocation-based tool for YouTube video search and visualization</h2>
+        <h1 style={null} className="text-center">GeoTube – A geolocation-based tool for YouTube video search and visualization</h1>
         <h3 style={null} className="text-center">Find a YouTube video with geo-tag information for any city, anywhere in the world!</h3>
       </Row>
 

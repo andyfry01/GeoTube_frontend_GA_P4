@@ -1,7 +1,12 @@
+// The basics
 import React from 'react'
+
+// Components
 import { GoogleMapLoader, GoogleMap } from 'react-google-maps'
-import display from '../styles/styles.js'
 import Circle from "../../node_modules/react-google-maps/lib/Circle"
+
+// Styling
+import display from '../styles/styles.js'
 
 const MapComponent = React.createClass({
 
@@ -11,7 +16,7 @@ const MapComponent = React.createClass({
       <GoogleMapLoader
         containerElement={
           <div
-            style={null}
+            style={this.props.style}
           />
         }
 

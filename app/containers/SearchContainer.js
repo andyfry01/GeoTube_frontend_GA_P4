@@ -2,7 +2,7 @@ import React from "react";
 import Search from "../components/Search";
 import axios from 'axios';
 import ajaxHelpers from "../utils/ajaxHelpers";
-import display from '../styles/styles';
+import DISPLAY from '../styles/styles';
 import MapComponent from '../components/MapComponent';
 import VideoComponent from '../components/VideoComponent';
 import Error from '../components/Error';
@@ -51,9 +51,9 @@ const SearchContainer = React.createClass({
   },
 
   // Runs initial search to return results for NYC when page loads
-  componentDidMount: function(){
-    this.handleSubmit()
-  },
+  // componentDidMount: function(){
+  //   this.handleSubmit()
+  // },
 
   // Event handlers for searhbars
   handleMaxResults: function(e){
@@ -183,7 +183,7 @@ const SearchContainer = React.createClass({
 
       <div>
 
-        <div id="searchContainer" style={display.main.searchContainer}>
+        <div id="searchContainer" style={DISPLAY.main.searchContainer}>
           <Search
             onChangeCity={this.handleCity}
             onChangeQuery={this.handleQuery}
@@ -196,7 +196,7 @@ const SearchContainer = React.createClass({
 
         { this.state.showError ? <Error locationError={this.state.locationError} videoError={this.state.videoError} /> : null }
 
-        <div style={display.main.parent} id="content-container">
+        <div style={DISPLAY.main.parent} id="content-container">
           <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} />
           { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
         </div>

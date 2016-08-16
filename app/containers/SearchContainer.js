@@ -6,6 +6,8 @@ import display from '../styles/styles';
 import MapComponent from '../components/MapComponent';
 import VideoComponent from '../components/VideoComponent';
 import Error from '../components/Error';
+// Note: if abandoning api search functionality, delete import here and fxn below to clean up code
+// import API_SEARCH from '../utils/API_SEARCH'
 
 const SearchContainer = React.createClass({
 
@@ -23,7 +25,8 @@ const SearchContainer = React.createClass({
       zoom: 11,
       locationError: "",
       videoError: "",
-      showError: false
+      showError: false,
+      stuff: 12
     };
   },
 
@@ -98,38 +101,49 @@ const SearchContainer = React.createClass({
       maxResults: this.state.maxResults,
       searchRadius: this.state.searchRadius,
     };
+
     if(!userInput.city){
     } else {
 
-      var that = this;
 
       ajaxHelpers.getCoordinates(userInput.city)
       .then(function(response){
         if(response.data.status === "ZERO_RESULTS"){
           console.log("no results");
-          that.setState({
+          // Displays error message if geoencoding API search doesn't return any results
+          this.setState({
             locationError : 'Sorry, not a valid location.  Please try a new search!',
           })
-          that.setState({ showError : true })
+          this.setState({ showError : true })
         }
+
+        // If geoencoding API returns results, reset error message, proceed with
         if (response.data.status == "OK") {
-          that.setState({ locationError: "" })
-          that.setState({ showError : false })
+          this.setState({ locationError: "" })
+          this.setState({ showError : false })
           console.log(response.data.results);
-          var cityLat = response.data.results[0].geometry.location.lat;
-          var cityLong = response.data.results[0].geometry.location.lng;
-          that.setState({
+
+          // Sets state for search location lat and long for YouTube API search based off of data from geoencoding API
+          let cityLat = response.data.results[0].geometry.location.lat;
+          let cityLong = response.data.results[0].geometry.location.lng;
+          this.setState({
             coords: {lat: cityLat, lng: cityLong}
           })
-          ajaxHelpers.getVideos(cityLat, cityLong, userInput.searchRadius, userInput.maxResults,userInput.live,userInput.searchQuery)
+
+          // Searches Youtube API for videos based on city coordinates and user-designated search filters
+          ajaxHelpers.getVideos(cityLat, cityLong, userInput.searchRadius, userInput.maxResults, userInput.live, userInput.searchQuery)
           .then(function(response){
+
+            // If no items returned for search, display error message
             if (response.data.items.length < 1) {
-              that.setState({ videoError : 'Sorry, no results were returned for your search query.' })
-              that.setState({ showError : true })
+              this.setState({ videoError : 'Sorry, no results were returned for your search query.' })
+              this.setState({ showError : true })
             }
+
+            // If items returned, reset error message, display videos
             if (response.data.items.length > 1) {
-              that.setState({ videoError: "" })
-              that.setState({ showError: false })
+              this.setState({ videoError: "" })
+              this.setState({ showError: false })
               let videoData = response.data.items.map(function(result){
                 return (
                   {
@@ -138,20 +152,38 @@ const SearchContainer = React.createClass({
                   }
                 )
               })
-              that.setState({
+
+              // Update video information to be rendered by video component, set videocomponent to display
+              // if it isn't displayed already
+              this.setState({
                 ajaxReturn : videoData
               })
-              that.setState({ showVideoComp : true });
+              this.setState({ showVideoComp : true });
             }
-          })
+          }.bind(this))
         }
-      })
+      }.bind(this))
     }
   },
+
+  /* TEST REFACTOR for cleaning up search container logic */
+
+  // handleSubmit: function(){
+  //
+  //   let fxnReturn = API_SEARCH.search(this.state)
+  //
+  //   this.setState({
+  //     stuff: fxnReturn
+  //   })
+  //   console.log(this.state);
+  // },
+
   render: function(){
     return (
+
       <div>
-        <div id="searchContainer" style={null}>
+
+        <div id="searchContainer" style={display.main.searchContainer}>
           <Search
             onChangeCity={this.handleCity}
             onChangeQuery={this.handleQuery}
@@ -161,11 +193,14 @@ const SearchContainer = React.createClass({
             onSubmit={this.handleSubmit}
             />
         </div>
+
         { this.state.showError ? <Error locationError={this.state.locationError} videoError={this.state.videoError} /> : null }
-        <div style={null} id="content-container">
+
+        <div style={display.main.parent} id="content-container">
           <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} />
           { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
         </div>
+
       </div>
     )
   }

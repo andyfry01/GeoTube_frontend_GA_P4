@@ -35,7 +35,6 @@ const DISPLAY = {
 
     contentArea: {
       height: '100%',
-      float: 'left',
       colStyles: {
         xs: 12,
         md: 6

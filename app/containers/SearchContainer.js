@@ -57,9 +57,9 @@ const SearchContainer = React.createClass({
   },
 
   // Runs initial search to return results for NYC when page loads
-  // componentDidMount: function(){
-  //   this.handleSubmit()
-  // },
+  componentDidMount: function(){
+    this.handleSubmit()
+  },
 
   // Event handlers for searhbars
   handleMaxResults: function(e){
@@ -211,7 +211,7 @@ const SearchContainer = React.createClass({
             <Col xs={DISPLAY.main.contentArea.colStyles.xs} md={DISPLAY.main.contentArea.colStyles.md} style={DISPLAY.main.contentArea}>
               <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} style={DISPLAY.main.map}/>
             </Col>
-            <Col xs={DISPLAY.main.contentArea.xs} md={DISPLAY.main.contentArea.md} style={DISPLAY.main.contentArea}>
+            <Col xs={DISPLAY.main.contentArea.colStyles.xs} md={DISPLAY.main.contentArea.colStyles.md} style={DISPLAY.main.contentArea}>
               { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
             </Col>
           </Row>

@@ -1,16 +1,13 @@
 import React from 'react';
 import SearchContainer from '../containers/SearchContainer';
-import axios from 'axios';
-import {Link} from 'react-router';
-import ajaxHelpers from "../utils/ajaxHelpers";
-import display from '../styles/styles';
+import DISPLAY from '../styles/styles';
 
 
 const Home = React.createClass({
 
   render(){
     return(
-      <div className="home-comp">
+      <div style={DISPLAY.main.searchContainer}>
         <SearchContainer
           updateMap={this.updateMap}
           updateCity={this.updateCity}
@@ -19,7 +16,7 @@ const Home = React.createClass({
           updateQuery={this.updateQuery}
           updateRadius={this.updateRadius}
           showVideo={this.showVideo}
-          handleSubmit={this.handleSubmit}/>
+          handleSubmit={this.handleSubmit} />
       </div>
     )
   }

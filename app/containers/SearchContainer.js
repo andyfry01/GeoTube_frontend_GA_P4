@@ -1,11 +1,17 @@
+// The basics
 import React from "react";
-import Search from "../components/Search";
-import axios from 'axios';
 import ajaxHelpers from "../utils/ajaxHelpers";
-import DISPLAY from '../styles/styles';
+
+// Components
+import Search from "../components/Search";
 import MapComponent from '../components/MapComponent';
 import VideoComponent from '../components/VideoComponent';
 import Error from '../components/Error';
+
+// Styling
+import { Grid, Row, Col } from 'react-bootstrap';
+import DISPLAY from '../styles/styles';
+
 // Note: if abandoning api search functionality, delete import here and fxn below to clean up code
 // import API_SEARCH from '../utils/API_SEARCH'
 
@@ -182,25 +188,39 @@ const SearchContainer = React.createClass({
     return (
 
       <div>
+        <Grid>
 
-        <div id="searchContainer" style={DISPLAY.main.searchContainer}>
-          <Search
-            onChangeCity={this.handleCity}
-            onChangeQuery={this.handleQuery}
-            onChangeLive={this.handleLive}
-            onChangeMaxResults={this.handleMaxResults}
-            onChangeRadius={this.handleRadius}
-            onSubmit={this.handleSubmit}
-            />
-        </div>
+          <Row>
+            <Col xs={DISPLAY.main.searchBar.xs} md={DISPLAY.main.searchBar.md} style={{border: '1px solid black'}}>
+              <Search
+              onChangeCity={this.handleCity}
+              onChangeQuery={this.handleQuery}
+              onChangeLive={this.handleLive}
+              onChangeMaxResults={this.handleMaxResults}
+              onChangeRadius={this.handleRadius}
+              onSubmit={this.handleSubmit} />
+            </Col>
+          </Row>
 
-        { this.state.showError ? <Error locationError={this.state.locationError} videoError={this.state.videoError} /> : null }
+          <Row>
+            <Col xs={DISPLAY.main.error.xs} md={DISPLAY.main.error.md} style={{border: '1px solid black'}}>
+              { this.state.showError ? <Error locationError={this.state.locationError} videoError={this.state.videoError} /> : null }
+            </Col>
+          </Row>
 
-        <div style={DISPLAY.main.parent} id="content-container">
-          <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} />
-          { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
-        </div>
+          <Row>
+            <Col xs={DISPLAY.main.contentArea.xs} md={DISPLAY.main.contentArea.md} style={{border: '1px solid black'}}>
+              <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} />
+            </Col>
+          </Row>
 
+          <Row>
+            <Col xs={DISPLAY.main.contentArea.xs} md={DISPLAY.main.contentArea.md} style={{border: '1px solid black'}}>
+              { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
+            </Col>
+          </Row>
+
+        </Grid>
       </div>
     )
   }

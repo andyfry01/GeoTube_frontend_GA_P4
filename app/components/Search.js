@@ -1,37 +1,65 @@
+// The basics
 import React from 'react';
-import display from '../styles/styles';
+
+// Display
+import DISPLAY from '../styles/styles';
+import { Grid, Row, Col, Button } from 'react-bootstrap'
 
 const Search = React.createClass({
   render: function(){
-    return(
-      <div id="mainDiv" style={null}>
-        <h4 style={null}>Find a YouTube video tagged by location for any city!</h4>
-        <div id="rowParent">
-          <div id="rowContainer" style={null}>
-              <div style={null}>
-                <input onChange={this.props.onChangeCity} label="Search Location" defaultValue="New York" placeholder="ex: 'New York,' 'Russia'" />
-                <select onChange = {this.props.onChangeLive} label="Live or All">
-                  <option value="false">All</option>
-                  <option value="true">Only live</option>
-                </select>
-                <select onChange={this.props.onChangeRadius} label ="Search Radius">
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                  <option value="25">25</option>
-                  <option value="50">50</option>
-                </select>
-                <select onChange={this.props.onChangeMaxResults} label ="# of videos returned?">
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                  <option value="25">25</option>
-                  <option value="50">50</option>
-                </select>
-                <input onChange={this.props.onChangeQuery} placeholder="'cats' or 'weather'" label ="Search term (optional)"/>
-                <button onClick={this.props.onSubmit}>Search!</button>
-              </div>
-          </div>
-        </div>
+    return (
+      <div>
+        <Grid>
+
+          <Row>
+            <h1 style={null}>GeoTube</h1>
+            <h2 style={null}>A geolocation-based tool for YouTube video search and visualization</h2>
+            <h3 style={null}>Find a YouTube video with geo-tag information for any city, anywhere in the world!</h3>
+          </Row>
+
+          <Row>
+
+            <Col xs={DISPLAY.main.searchFieldElement.xs} md={DISPLAY.main.searchFieldElement.md}>
+              <input onChange={this.props.onChangeCity} label="Search Location" defaultValue="New York" placeholder="ex: 'New York,' 'Russia'" />
+            </Col>
+
+            <Col xs={DISPLAY.main.searchFieldElement.xs} md={DISPLAY.main.searchFieldElement.md}>
+              <select onChange = {this.props.onChangeLive} label="Live or All">
+                <option value="false">All</option>
+                <option value="true">Only live</option>
+              </select>
+            </Col>
+
+            <Col xs={DISPLAY.main.searchFieldElement.xs} md={DISPLAY.main.searchFieldElement.md}>
+              <select onChange={this.props.onChangeRadius} label ="Search Radius">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+              </select>
+            </Col>
+
+            <Col xs={DISPLAY.main.searchFieldElement.xs} md={DISPLAY.main.searchFieldElement.md}>
+              <select onChange={this.props.onChangeMaxResults} label ="# of videos returned?">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+              </select>
+            </Col>
+
+            <Col xs={DISPLAY.main.searchFieldElement.xs} md={DISPLAY.main.searchFieldElement.md}>
+              <input onChange={this.props.onChangeQuery} placeholder="'cats' or 'weather'" label ="Search term (optional)"/>
+            </Col>
+
+            <Col xs={DISPLAY.main.searchFieldElement.xs} md={DISPLAY.main.searchFieldElement.md}>
+              <Button bsStyle={'regular'} onClick={this.props.onSubmit}>Search!</Button>
+            </Col>
+
+          </Row>
+        </Grid>
       </div>
+
     )
   }
 })

@@ -1,7 +1,7 @@
 const DISPLAY = {
 
   nav: {
-    height: '10vh',
+    height: '7vh',
     width: '100vw',
     backgroundColor: '#e52d27',
     fontSize: '20px',
@@ -16,7 +16,7 @@ const DISPLAY = {
   main: {
 
     searchContainer: {
-      height: '90vh',
+      height: '93vh',
       width: '100vw',
       padding: '10px',
       background: 'lightBlue'
@@ -24,7 +24,8 @@ const DISPLAY = {
 
     searchBar: {
       xs: 12,
-      md: 12
+      md: 12,
+      position: 'relative'
     },
 
     error: {
@@ -38,8 +39,11 @@ const DISPLAY = {
     },
 
     searchFieldElement: {
-      xs: 12,
-      md: 2
+
+      colStyles: {
+        xs: 12,
+        md: 2
+      }
     }
 
 

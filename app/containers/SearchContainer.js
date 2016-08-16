@@ -188,10 +188,9 @@ const SearchContainer = React.createClass({
     return (
 
       <div>
-        <Grid>
 
           <Row>
-            <Col xs={DISPLAY.main.searchBar.xs} md={DISPLAY.main.searchBar.md} style={{border: '1px solid black'}}>
+            <Col xs={DISPLAY.main.searchBar.xs} md={DISPLAY.main.searchBar.md}>
               <Search
               onChangeCity={this.handleCity}
               onChangeQuery={this.handleQuery}
@@ -220,7 +219,6 @@ const SearchContainer = React.createClass({
             </Col>
           </Row>
 
-        </Grid>
       </div>
     )
   }

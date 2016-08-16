@@ -34,8 +34,17 @@ const DISPLAY = {
     },
 
     contentArea: {
-      xs: 12,
-      md: 6
+      height: '100%',
+      float: 'left',
+      colStyles: {
+        xs: 12,
+        md: 6
+      }
+    },
+
+    map: {
+      height: '100%',
+      width: '100%',
     },
 
     searchFieldElement: {

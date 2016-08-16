@@ -187,7 +187,7 @@ const SearchContainer = React.createClass({
   render: function(){
     return (
 
-      <div>
+      <div style={{height: '100%'}}>
 
           <Row>
             <Col xs={DISPLAY.main.searchBar.xs} md={DISPLAY.main.searchBar.md}>
@@ -207,14 +207,11 @@ const SearchContainer = React.createClass({
             </Col>
           </Row>
 
-          <Row>
-            <Col xs={DISPLAY.main.contentArea.xs} md={DISPLAY.main.contentArea.md} style={{border: '1px solid black'}}>
-              <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} />
+          <Row style={{height: '75%'}}>
+            <Col xs={DISPLAY.main.contentArea.colStyles.xs} md={DISPLAY.main.contentArea.colStyles.md} style={DISPLAY.main.contentArea}>
+              <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} style={DISPLAY.main.map}/>
             </Col>
-          </Row>
-
-          <Row>
-            <Col xs={DISPLAY.main.contentArea.xs} md={DISPLAY.main.contentArea.md} style={{border: '1px solid black'}}>
+            <Col xs={DISPLAY.main.contentArea.xs} md={DISPLAY.main.contentArea.md} style={DISPLAY.main.contentArea}>
               { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
             </Col>
           </Row>

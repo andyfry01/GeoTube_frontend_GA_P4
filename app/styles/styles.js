@@ -114,6 +114,16 @@ const DISPLAY = {
     }
 
   },
+
+  about: {
+
+    centerCol: {
+      backgroundImage: 'url(../app/images/flatiron.jpg)',
+      height: '93vh',
+    },
+    image: {
+    }
+  }
 }
 
 export default DISPLAY;

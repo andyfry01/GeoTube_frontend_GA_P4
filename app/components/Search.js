@@ -8,7 +8,7 @@ import { Grid, Row, Col, Button, Form, FormGroup, FormControl, ControlLabel } fr
 const Search = React.createClass({
   render: function(){
     return (
-      <div style={{marginBottom: '20px'}}>
+      <div style={DISPLAY.main.headerDiv}>
         <Row style={DISPLAY.main.header.bg}>
           <Row >
             <Col className='text-center' xs={DISPLAY.main.header.headerCol.xs}>
@@ -17,7 +17,7 @@ const Search = React.createClass({
           </Row>
           <Row>
             <Col>
-              <h2 style={DISPLAY.main.header.subHeader} className="text-center" xs={DISPLAY.main.header.headerCol.xs} xsOffset={DISPLAY.main.header.headerCol.offset}>A geolocation-based tool for YouTube video search and visualization</h2>
+              <h2 style={DISPLAY.main.header.subHeader} className="text-center">A geolocation-based tool for YouTube video search and visualization</h2>
             </Col>
           </Row>
         </Row>
@@ -79,7 +79,7 @@ const Search = React.createClass({
                   />
               </Col>
 
-              <Col className="text-center" xs={DISPLAY.main.searchFieldElement.colStyles.xs} md={DISPLAY.main.searchFieldElement.colStyles.md}>
+              <Col className="text-center" xs={DISPLAY.main.searchFieldElement.colStyles.xs} md={DISPLAY.main.searchFieldElement.colStyles.md} style={DISPLAY.main.searchFieldElement.searchButtonDiv}>
                 <Button style={DISPLAY.main.button} bsStyle={DISPLAY.main.button.bsStyle} onClick={this.props.onSubmit}>Search!</Button>
               </Col>
 

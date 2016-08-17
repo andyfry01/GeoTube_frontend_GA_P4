@@ -20,7 +20,9 @@ const DISPLAY = {
       logo: {
         fontFamily: 'Righteous, cursive',
         color: 'white',
-        fontSize: '4em'
+        fontSize: '4.5em'
+        // border: '5px solid white',
+        // borderRadius: '5px'
       },
       headerDiv: {
         marginBottom: '20px'
@@ -55,7 +57,10 @@ const DISPLAY = {
 
     error: {
       xs: 12,
-      md: 12
+      md: 12,
+      fontFamily: 'Nixie One, cursive',
+      fontSize: '1.5em',
+      color: 'white'
     },
 
     contentArea: {
@@ -83,13 +88,18 @@ const DISPLAY = {
       colStyles: {
         xs: 12,
         md: 2
+      },
+      searchButtonDiv: {
+        paddingTop: '15px',
+        paddingBottom: '15px'
       }
     },
 
     video: {
       videoCol: {
         xs: 12,
-        height: '360px'
+        height: '360px',
+        marginBottom: '10px'
       },
       videoTitle: {
         xs: 12,

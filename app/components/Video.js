@@ -20,13 +20,13 @@ const Video = React.createClass({
     return (
       <div>
         <Row>
-          <Col>
-            <h1 className='text-center' xs={DISPLAY.main.video.videoTitle.xs} style={DISPLAY.main.video.videoTitle}>{this.props.title}</h1>
+          <Col className='text-center' xs={DISPLAY.main.video.videoTitle.xs}>
+            <h1 style={DISPLAY.main.video.videoTitle}>{this.props.title}</h1>
           </Col>
         </Row>
         <Row>
           <Col xs={DISPLAY.main.video.videoCol.xs} style={DISPLAY.main.video.videoCol}>
-            <iframe height='100%' width='100%' src={this.props.url} frameborder="0" allowFullScreen></iframe>
+            <iframe height='100%' width='100%' src={this.props.url} frameBorder="0" allowFullScreen></iframe>
           </Col>
         </Row>
         <Row>

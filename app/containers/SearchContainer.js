@@ -9,7 +9,7 @@ import VideoComponent from '../components/VideoComponent';
 import Error from '../components/Error';
 
 // Styling
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Button } from 'react-bootstrap';
 import DISPLAY from '../styles/styles';
 
 // Responsive packages
@@ -202,16 +202,16 @@ const SearchContainer = React.createClass({
               onChangeRadius={this.handleRadius}
               onSubmit={this.handleSubmit} />
             </Col>
-            <MediaQuery query='(max-width: 991px)'>
-              <h1>Scroll to map goes here</h1> <h1>Scroll to search goes here</h1>
-            </MediaQuery>
+
+            <Col className="text-center" xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
+              <MediaQuery query='(max-width: 991px)'>
+                <Button>Scroll to map</Button>
+              </MediaQuery>
+            </Col>
           </Row>
 
-
-
-
           <Row>
-            <Col xs={DISPLAY.main.error.xs} md={DISPLAY.main.error.md} style={{border: '1px solid black'}}>
+            <Col xs={DISPLAY.main.error.xs} md={DISPLAY.main.error.md}>
               { this.state.showError ? <Error locationError={this.state.locationError} videoError={this.state.videoError} /> : null }
             </Col>
           </Row>
@@ -223,17 +223,21 @@ const SearchContainer = React.createClass({
               <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} style={DISPLAY.main.map}/>
             </Col>
 
-            <MediaQuery query='(max-width: 991px)'>
-            <h1>Scroll to search goes here</h1> <h1>Scroll to videos goes here</h1>
-            </MediaQuery>
+            <Col className='text-center' xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
+              <MediaQuery query='(max-width: 991px)'>
+                <Button>Scroll to search</Button> <Button>Scroll to videos</Button>
+              </MediaQuery>
+            </Col>
 
             <Col xs={DISPLAY.main.contentArea.colStyles.xs} md={DISPLAY.main.contentArea.colStyles.md} style={DISPLAY.main.contentArea}>
               { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
             </Col>
 
-            <MediaQuery query='(max-width: 991px)'>
-            <h1>Scroll to map goes here</h1> <h1>Scroll to search goes here</h1>
-            </MediaQuery>
+            <Col className='text-center' xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
+              <MediaQuery query='(max-width: 991px)'>
+                <Button>Scroll to search</Button>  <Button>Scroll to map</Button>
+              </MediaQuery>
+            </Col>
           </Row>
 
 

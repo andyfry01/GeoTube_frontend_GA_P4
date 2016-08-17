@@ -41,23 +41,23 @@ const DISPLAY = {
       }
     },
 
+    scrollButton: {
+      colSize: 8,
+      colOffset: 2
+    },
+
     map: {
       height: '100%',
       width: '100%',
     },
 
     searchFieldElement: {
-
       colStyles: {
         xs: 12,
         md: 2
       }
     }
-
-
   },
-
-
 }
 
 export default DISPLAY;

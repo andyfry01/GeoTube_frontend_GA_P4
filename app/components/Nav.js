@@ -7,8 +7,8 @@ const Nav = React.createClass({
   render: function() {
     return  (
       <div style={DISPLAY.nav}>
-        <Link to="About"> <Button bsStyle={DISPLAY.nav.button.bsStyle}> About </Button> </Link>
-        <Link to="Favorites"> <Button bsStyle={DISPLAY.nav.button.bsStyle}> Favorites </Button> </Link>
+        <Link to="About"> <Button bsStyle={DISPLAY.main.button.bsStyle} style={DISPLAY.main.button}> About </Button> </Link>
+        <Link to="Favorites"> <Button bsStyle={DISPLAY.main.button.bsStyle} style={DISPLAY.main.button}> Favorites </Button> </Link>
       </div>
 
     )

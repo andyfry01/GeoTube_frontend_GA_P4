@@ -26,12 +26,12 @@ const Video = React.createClass({
         </Row>
         <Row>
           <Col xs={DISPLAY.main.video.videoCol.xs} style={DISPLAY.main.video.videoCol}>
-            <iframe height='100%' width='100%' src={this.props.url} frameborder="0" allowfullscreen></iframe>
+            <iframe height='100%' width='100%' src={this.props.url} frameborder="0" allowFullScreen></iframe>
           </Col>
         </Row>
         <Row>
           <Col className='text-center' xs={DISPLAY.main.video.videoCol.xs}>
-            <button xs={DISPLAY.main.video.videoCol.xs} onClick={this.addVideo}>Add to favorites!</button>
+            <Button bsStyle={DISPLAY.main.button.bsStyle} style={DISPLAY.main.button} xs={DISPLAY.main.video.videoCol.xs} onClick={this.addVideo}>Add to favorites!</Button>
           </Col>
         </Row>
       </div>

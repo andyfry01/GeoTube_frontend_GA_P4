@@ -7,18 +7,23 @@ const DISPLAY = {
     fontSize: '20px',
     padding: '10px',
     text: 'white',
-
-    button: {
-      bsStyle: "primary"
-    }
   },
 
   main: {
+    button: {
+      bsStyle: "primary",
+      fontFamily: 'Nixie One, cursive',
+      color: 'white',
+      fontSize: '1em'
+    },
     header: {
       logo: {
         fontFamily: 'Righteous, cursive',
         color: 'white',
         fontSize: '4em'
+      },
+      headerDiv: {
+        marginBottom: '20px'
       },
       headerCol: {
         xs: 12,

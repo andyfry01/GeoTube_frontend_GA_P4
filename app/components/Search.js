@@ -8,9 +8,9 @@ import { Grid, Row, Col, Button, Form, FormGroup, FormControl, ControlLabel } fr
 const Search = React.createClass({
   render: function(){
     return (
-      <div>
+      <div style={{marginBottom: '20px'}}>
         <Row style={DISPLAY.main.header.bg}>
-          <Row>
+          <Row >
             <Col className='text-center' xs={DISPLAY.main.header.headerCol.xs}>
               <h1 style={DISPLAY.main.header.logo}>GeoTube</h1>
             </Col>
@@ -80,7 +80,7 @@ const Search = React.createClass({
               </Col>
 
               <Col className="text-center" xs={DISPLAY.main.searchFieldElement.colStyles.xs} md={DISPLAY.main.searchFieldElement.colStyles.md}>
-                <Button bsStyle={'primary'} onClick={this.props.onSubmit}>Search!</Button>
+                <Button style={DISPLAY.main.button} bsStyle={DISPLAY.main.button.bsStyle} onClick={this.props.onSubmit}>Search!</Button>
               </Col>
 
             </FormGroup>

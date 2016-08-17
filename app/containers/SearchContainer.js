@@ -192,10 +192,10 @@ const SearchContainer = React.createClass({
             <Col className="text-center" xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
               <MediaQuery query='(max-width: 991px)'>
                 <Link to="map" smooth={true} duration={250}>
-                  <Button>Scroll to map</Button>
+                  <Button bsStyle={DISPLAY.main.button.bsStyle} style={DISPLAY.main.button}>Scroll to map</Button>
                 </Link>
                 <Link to='videos' smooth={true} duration={250}>
-                  <Button>Scroll to videos</Button>
+                  <Button bsStyle={DISPLAY.main.button.bsStyle} style={DISPLAY.main.button}>Scroll to videos</Button>
                 </Link>
               </MediaQuery>
             </Col>
@@ -218,10 +218,10 @@ const SearchContainer = React.createClass({
             <MediaQuery query='(max-width: 991px)'>
               <Col className='text-center' xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
                 <Link to='videos' smooth={true} duration={250}>
-                  <Button>Scroll to videos</Button>
+                  <Button bsStyle={DISPLAY.main.button.bsStyle} style={DISPLAY.main.button}>Scroll to videos</Button>
                 </Link>
                 <Link to='search' smooth={true} duration={250}>
-                  <Button>Scroll to search</Button>
+                  <Button bsStyle={DISPLAY.main.button.bsStyle} style={DISPLAY.main.button}>Scroll to search</Button>
                 </Link>
               </Col>
             </MediaQuery>
@@ -234,10 +234,10 @@ const SearchContainer = React.createClass({
             <MediaQuery query='(max-width: 991px)'>
               <Col className='text-center' xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
                 <Link to='map' smooth={true} duration={250}>
-                  <Button>Scroll to map</Button>
+                  <Button bsStyle={DISPLAY.main.button.bsStyle} style={DISPLAY.main.button}>Scroll to map</Button>
                 </Link>
                 <Link to='search' smooth={true} duration={250}>
-                  <Button>Scroll to search</Button>
+                  <Button bsStyle={DISPLAY.main.button.bsStyle} style={DISPLAY.main.button}>Scroll to search</Button>
                 </Link>
               </Col>
             </MediaQuery>

@@ -12,6 +12,10 @@ import Error from '../components/Error';
 import { Grid, Row, Col } from 'react-bootstrap';
 import DISPLAY from '../styles/styles';
 
+// Responsive packages
+import MediaQuery from 'react-responsive'
+// import from
+
 // Note: if abandoning api search functionality, delete import here and fxn below to clean up code
 // import API_SEARCH from '../utils/API_SEARCH'
 
@@ -31,8 +35,7 @@ const SearchContainer = React.createClass({
       zoom: 11,
       locationError: "",
       videoError: "",
-      showError: false,
-      stuff: 12
+      showError: false
     };
   },
 
@@ -61,7 +64,7 @@ const SearchContainer = React.createClass({
     this.handleSubmit()
   },
 
-  // Event handlers for searhbars
+  // Event handlers for searchbars
   handleMaxResults: function(e){
     this.setState({
       maxResults: e.target.value
@@ -199,7 +202,13 @@ const SearchContainer = React.createClass({
               onChangeRadius={this.handleRadius}
               onSubmit={this.handleSubmit} />
             </Col>
+            <MediaQuery query='(max-width: 991px)'>
+              <h1>Scroll to map goes here</h1> <h1>Scroll to search goes here</h1>
+            </MediaQuery>
           </Row>
+
+
+
 
           <Row>
             <Col xs={DISPLAY.main.error.xs} md={DISPLAY.main.error.md} style={{border: '1px solid black'}}>
@@ -207,14 +216,27 @@ const SearchContainer = React.createClass({
             </Col>
           </Row>
 
+
+
           <Row style={{height: '75%'}}>
             <Col xs={DISPLAY.main.contentArea.colStyles.xs} md={DISPLAY.main.contentArea.colStyles.md} style={DISPLAY.main.contentArea}>
               <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} style={DISPLAY.main.map}/>
             </Col>
+
+            <MediaQuery query='(max-width: 991px)'>
+            <h1>Scroll to search goes here</h1> <h1>Scroll to videos goes here</h1>
+            </MediaQuery>
+
             <Col xs={DISPLAY.main.contentArea.colStyles.xs} md={DISPLAY.main.contentArea.colStyles.md} style={DISPLAY.main.contentArea}>
               { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
             </Col>
+
+            <MediaQuery query='(max-width: 991px)'>
+            <h1>Scroll to map goes here</h1> <h1>Scroll to search goes here</h1>
+            </MediaQuery>
           </Row>
+
+
 
       </div>
     )

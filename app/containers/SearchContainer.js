@@ -9,12 +9,12 @@ import VideoComponent from '../components/VideoComponent';
 import Error from '../components/Error';
 
 // Styling
-import { Grid, Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import DISPLAY from '../styles/styles';
 
-// Responsive packages
+// Responsive elements
 import MediaQuery from 'react-responsive'
-// import from
+import { Link, Element } from 'react-scroll'
 
 // Note: if abandoning api search functionality, delete import here and fxn below to clean up code
 // import API_SEARCH from '../utils/API_SEARCH'
@@ -193,6 +193,7 @@ const SearchContainer = React.createClass({
       <div style={{height: '100%'}}>
 
           <Row>
+            <Element name='search' />
             <Col xs={DISPLAY.main.searchBar.xs} md={DISPLAY.main.searchBar.md}>
               <Search
               onChangeCity={this.handleCity}
@@ -204,9 +205,14 @@ const SearchContainer = React.createClass({
             </Col>
 
             <Col className="text-center" xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
-              <MediaQuery query='(max-width: 991px)'>
-                <Button>Scroll to map</Button>
-              </MediaQuery>
+              <Link to="map" smooth={true} duration={250}>
+                <MediaQuery query='(max-width: 991px)'>
+                  <Button>Scroll to map</Button>
+                </MediaQuery>
+              </Link>
+              <Link to='videos' smooth={true} duration={250}>
+                <Button>Scroll to videos</Button>
+              </Link>
             </Col>
           </Row>
 
@@ -219,25 +225,37 @@ const SearchContainer = React.createClass({
 
 
           <Row style={{height: '75%'}}>
-            <Col xs={DISPLAY.main.contentArea.colStyles.xs} md={DISPLAY.main.contentArea.colStyles.md} style={DISPLAY.main.contentArea}>
-              <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} style={DISPLAY.main.map}/>
-            </Col>
+              <Col xs={DISPLAY.main.contentArea.colStyles.xs} md={DISPLAY.main.contentArea.colStyles.md} style={DISPLAY.main.contentArea}>
+                <Element name='map' />
+                <MapComponent coords={this.state.coords} radius={this.state.radius} zoom={this.state.zoom} style={DISPLAY.main.map}/>
+              </Col>
 
-            <Col className='text-center' xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
-              <MediaQuery query='(max-width: 991px)'>
-                <Button>Scroll to search</Button> <Button>Scroll to videos</Button>
-              </MediaQuery>
-            </Col>
+            <MediaQuery query='(max-width: 991px)'>
+              <Col className='text-center' xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
+                <Link to='search' smooth={true} duration={250}>
+                  <Button>Scroll to search</Button>
+                </Link>
+                <Link to='videos' smooth={true} duration={250}>
+                  <Button>Scroll to videos</Button>
+                </Link>
+              </Col>
+            </MediaQuery>
 
             <Col xs={DISPLAY.main.contentArea.colStyles.xs} md={DISPLAY.main.contentArea.colStyles.md} style={DISPLAY.main.contentArea}>
+              <Element name='videos' />
               { this.state.showVideoComp ? <VideoComponent ajaxReturn={this.state.ajaxReturn} /> : null }
             </Col>
 
-            <Col className='text-center' xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
-              <MediaQuery query='(max-width: 991px)'>
-                <Button>Scroll to search</Button>  <Button>Scroll to map</Button>
-              </MediaQuery>
-            </Col>
+            <MediaQuery query='(max-width: 991px)'>
+              <Col className='text-center' xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
+                <Link to='search' smooth={true} duration={250}>
+                  <Button>Scroll to search</Button>
+                </Link>
+                <Link to='map' smooth={true} duration={250}>
+                  <Button>Scroll to map</Button>
+                </Link>
+              </Col>
+            </MediaQuery>
           </Row>
 
 

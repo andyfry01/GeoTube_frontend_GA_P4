@@ -39,7 +39,7 @@ const DISPLAY = {
       height: '93vh',
       width: '100vw',
       padding: '10px',
-      background: 'lightBlue'
+      background: '#BFD7EA'
     },
 
     searchBar: {
@@ -55,6 +55,7 @@ const DISPLAY = {
 
     contentArea: {
       height: '100%',
+      background: '#BFD7EA',
       colStyles: {
         xs: 12,
         md: 6
@@ -78,7 +79,25 @@ const DISPLAY = {
         xs: 12,
         md: 2
       }
+    },
+
+    video: {
+      videoCol: {
+        xs: 12,
+        height: '360px'
+      },
+      videoTitle: {
+        xs: 12,
+        fontFamily: 'Righteous, cursive',
+        color: 'black',
+        fontSize: '2em',
+      },
+      iFrame: {
+        height: '100%',
+        width: '100%'
+      }
     }
+
   },
 }
 

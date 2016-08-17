@@ -16,9 +16,6 @@ import DISPLAY from '../styles/styles';
 import MediaQuery from 'react-responsive'
 import { Link, Element } from 'react-scroll'
 
-// Note: if abandoning api search functionality, delete import here and fxn below to clean up code
-// import API_SEARCH from '../utils/API_SEARCH'
-
 const SearchContainer = React.createClass({
 
   getInitialState: function() {
@@ -174,18 +171,6 @@ const SearchContainer = React.createClass({
       }.bind(this))
     }
   },
-
-  /* TEST REFACTOR for cleaning up search container logic */
-
-  // handleSubmit: function(){
-  //
-  //   let fxnReturn = API_SEARCH.search(this.state)
-  //
-  //   this.setState({
-  //     stuff: fxnReturn
-  //   })
-  //   console.log(this.state);
-  // },
 
   render: function(){
     return (

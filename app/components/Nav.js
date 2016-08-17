@@ -10,6 +10,7 @@ const Nav = React.createClass({
         <Link to="About"> <Button bsStyle={DISPLAY.nav.button.bsStyle}> About </Button> </Link>
         <Link to="Favorites"> <Button bsStyle={DISPLAY.nav.button.bsStyle}> Favorites </Button> </Link>
       </div>
+
     )
   }
 })

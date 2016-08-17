@@ -9,12 +9,19 @@ const Search = React.createClass({
   render: function(){
     return (
       <div>
-
-      <Row>
-        <h1 style={null} className="text-center">GeoTube – A geolocation-based tool for YouTube video search and visualization</h1>
-        <h2 style={null} className="text-center">Find a YouTube video with geo-tag information for any city, anywhere in the world!</h2>
+      <Row style={DISPLAY.main.header.bg}>
+        <Row>
+          <Col className='text-center' xs={DISPLAY.main.header.headerCol.xs}>
+            <h1 style={DISPLAY.main.header.logo}>GeoTube</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <h1 style={DISPLAY.main.header.subHeader} className="text-center" xs={DISPLAY.main.header.headerCol.xs} xsOffset={DISPLAY.main.header.headerCol.offset}>A geolocation-based tool for YouTube video search and visualization</h1>
+            <h2 style={DISPLAY.main.header.subHeader} className="text-center" xs={DISPLAY.main.header.headerCol.xs} xsOffset={DISPLAY.main.header.headerCol.offset}>Find YouTube videos with geo-tag information for any city, anywhere in the world!</h2>
+          </Col>
+        </Row>
       </Row>
-
       <Row>
         <Form>
           <FormGroup controlId="cityData">

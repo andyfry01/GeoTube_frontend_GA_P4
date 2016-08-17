@@ -14,7 +14,27 @@ const DISPLAY = {
   },
 
   main: {
+    header: {
+      logo: {
+        fontFamily: 'Righteous, cursive',
+        color: 'white',
+        fontSize: '4em'
+      },
+      headerCol: {
+        xs: 12,
+      },
+      bg: {
+        backgroundColor: 'rgba(229, 45, 39, 0.70)',
+        width: '75%',
+        margin: '0 auto'
+      },
+      subHeader: {
+        fontFamily: 'Nixie One, cursive',
+        fontSize: '2em',
+        color: 'white'
+      }
 
+    },
     searchContainer: {
       height: '93vh',
       width: '100vw',
@@ -42,8 +62,10 @@ const DISPLAY = {
     },
 
     scrollButton: {
-      colSize: 8,
-      colOffset: 2
+      colStyling: {
+        colSize: 8,
+        colOffset: 2
+      }
     },
 
     map: {

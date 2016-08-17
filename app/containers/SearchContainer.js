@@ -205,14 +205,14 @@ const SearchContainer = React.createClass({
             </Col>
 
             <Col className="text-center" xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
-              <Link to="map" smooth={true} duration={250}>
-                <MediaQuery query='(max-width: 991px)'>
+              <MediaQuery query='(max-width: 991px)'>
+                <Link to="map" smooth={true} duration={250}>
                   <Button>Scroll to map</Button>
-                </MediaQuery>
-              </Link>
-              <Link to='videos' smooth={true} duration={250}>
-                <Button>Scroll to videos</Button>
-              </Link>
+                </Link>
+                <Link to='videos' smooth={true} duration={250}>
+                  <Button>Scroll to videos</Button>
+                </Link>
+              </MediaQuery>
             </Col>
           </Row>
 
@@ -232,11 +232,11 @@ const SearchContainer = React.createClass({
 
             <MediaQuery query='(max-width: 991px)'>
               <Col className='text-center' xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
-                <Link to='search' smooth={true} duration={250}>
-                  <Button>Scroll to search</Button>
-                </Link>
                 <Link to='videos' smooth={true} duration={250}>
                   <Button>Scroll to videos</Button>
+                </Link>
+                <Link to='search' smooth={true} duration={250}>
+                  <Button>Scroll to search</Button>
                 </Link>
               </Col>
             </MediaQuery>
@@ -248,11 +248,11 @@ const SearchContainer = React.createClass({
 
             <MediaQuery query='(max-width: 991px)'>
               <Col className='text-center' xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
-                <Link to='search' smooth={true} duration={250}>
-                  <Button>Scroll to search</Button>
-                </Link>
                 <Link to='map' smooth={true} duration={250}>
                   <Button>Scroll to map</Button>
+                </Link>
+                <Link to='search' smooth={true} duration={250}>
+                  <Button>Scroll to search</Button>
                 </Link>
               </Col>
             </MediaQuery>

@@ -103,7 +103,7 @@ const DISPLAY = {
       },
       videoTitle: {
         xs: 12,
-        fontFamily: 'Righteous, cursive',
+        fontFamily: 'Nixie One, cursive',
         color: 'black',
         fontSize: '2em',
       },

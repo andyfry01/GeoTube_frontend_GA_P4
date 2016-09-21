@@ -117,11 +117,31 @@ const DISPLAY = {
 
   about: {
 
-    centerCol: {
+    bg: {
       backgroundImage: 'url(../app/images/flatiron.jpg)',
       height: '93vh',
     },
-    image: {
+    infoRow: {
+      position: 'relative',
+      height: '30%',
+      width: '100vw',
+    },
+    infoCol: {
+      xs: 12,
+      md: 6,
+      mdOffset: 3,
+      border: '1px solid black',
+
+    },
+    contributorRow: {
+      position: 'relative',
+      height: '70%',
+      width: '100vw',
+    },
+    contributorCol: {
+      xs: 12,
+      md: 4,
+      border: '1px solid black',
     }
   }
 }

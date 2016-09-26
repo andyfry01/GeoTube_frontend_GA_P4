@@ -140,7 +140,6 @@ const DISPLAY = {
       xs: 12,
       md: 8,
       mdOffset: 2,
-      border: '1px solid black',
       marginTop: '25px',
       backgroundColor: 'rgba(229, 45, 39, 0.70)',
     },

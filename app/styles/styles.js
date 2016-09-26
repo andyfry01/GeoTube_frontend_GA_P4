@@ -74,10 +74,7 @@ const DISPLAY = {
     },
 
     scrollButton: {
-      colStyling: {
-        colSize: 8,
-        colOffset: 2
-      }
+      backgroundColor: 'rgb(191, 215, 234)',
     },
 
     map: {
@@ -113,7 +110,6 @@ const DISPLAY = {
         width: '100%'
       }
     }
-
   },
 
 

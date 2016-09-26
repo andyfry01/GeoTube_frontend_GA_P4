@@ -189,7 +189,7 @@ const SearchContainer = React.createClass({
               onSubmit={this.handleSubmit} />
             </Col>
 
-            <Col className="text-center" xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
+            <Col className="text-center" style={DISPLAY.main.scrollButton}>
               <MediaQuery query='(max-width: 991px)'>
                 <Link to="map" smooth={true} duration={250}>
                   <Button bsStyle={DISPLAY.main.button.bsStyle} style={DISPLAY.main.button}>Scroll to map</Button>
@@ -216,7 +216,7 @@ const SearchContainer = React.createClass({
               </Col>
 
             <MediaQuery query='(max-width: 991px)'>
-              <Col className='text-center' xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
+              <Col className='text-center' style={DISPLAY.main.scrollButton}>
                 <Link to='videos' smooth={true} duration={250}>
                   <Button bsStyle={DISPLAY.main.button.bsStyle} style={DISPLAY.main.button}>Scroll to videos</Button>
                 </Link>
@@ -232,7 +232,7 @@ const SearchContainer = React.createClass({
             </Col>
 
             <MediaQuery query='(max-width: 991px)'>
-              <Col className='text-center' xs={DISPLAY.main.scrollButton.colSize} xsOffset={DISPLAY.main.scrollButton.colOffset}>
+              <Col className='text-center' style={DISPLAY.main.scrollButton}>
                 <Link to='map' smooth={true} duration={250}>
                   <Button bsStyle={DISPLAY.main.button.bsStyle} style={DISPLAY.main.button}>Scroll to map</Button>
                 </Link>

@@ -21,8 +21,6 @@ const DISPLAY = {
         fontFamily: 'Righteous, cursive',
         color: 'white',
         fontSize: '4.5em'
-        // border: '5px solid white',
-        // borderRadius: '5px'
       },
       headerDiv: {
         marginBottom: '20px'
@@ -126,12 +124,24 @@ const DISPLAY = {
       height: '30%',
       width: '100vw',
     },
+    logo: {
+      fontFamily: 'Righteous, cursive',
+      color: 'white',
+      fontSize: '1.75em',
+    },
+    text: {
+      fontFamily: 'Nixie One, cursive',
+      fontSize: '1.25em',
+      color: 'white',
+      margin: '10px',
+    },
     infoCol: {
       xs: 12,
-      md: 6,
-      mdOffset: 3,
+      md: 8,
+      mdOffset: 2,
       border: '1px solid black',
-      marginTop: '50px',
+      marginTop: '25px',
+      backgroundColor: 'rgba(229, 45, 39, 0.70)',
     },
     contributorRow: {
       position: 'relative',
@@ -140,24 +150,25 @@ const DISPLAY = {
     },
     contributorCol: {
       xs: 12,
-      md: 4,
+      md: 5,
       div: {
-        marginBottom: '50px'
+        marginTop: '25px',
+        backgroundColor: 'rgba(229, 45, 39, 0.70)',
+        height: '100%'
       },
       andy: {
         backgroundImage: 'url(../app/images/andy.jpg)',
         backgroundSize: 'cover',
-        height: '320px',
-        width: '320px',
+        height: '280px',
+        width: '280px',
         marginLeft: 'auto',
         marginRight: 'auto'
-
       },
       sean: {
         backgroundImage: 'url(../app/images/sean.jpg)',
         backgroundSize: 'cover',
-        height: '320px',
-        width: '320px',
+        height: '280px',
+        width: '280px',
         marginLeft: 'auto',
         marginRight: 'auto'
       },

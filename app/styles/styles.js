@@ -1,5 +1,6 @@
 const DISPLAY = {
 
+  // Styles for the nav component at the top of the page
   nav: {
     height: '7vh',
     width: '100vw',
@@ -9,6 +10,8 @@ const DISPLAY = {
     text: 'white',
   },
 
+
+  // Styles for the main page: map, video column, button styles, header, and search bar
   main: {
     button: {
       bsStyle: "primary",
@@ -113,6 +116,8 @@ const DISPLAY = {
 
   },
 
+
+  // Styles for the about page
   about: {
     bg: {
       background: 'url(../app/images/flatiron.jpg) no-repeat center center fixed',
@@ -174,6 +179,10 @@ const DISPLAY = {
       },
     }
   }
+
+
+  // Styles for the video favorite page
+  
 }
 
 export default DISPLAY;

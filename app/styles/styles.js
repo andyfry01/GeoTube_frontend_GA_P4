@@ -120,6 +120,7 @@ const DISPLAY = {
     bg: {
       backgroundImage: 'url(../app/images/flatiron.jpg)',
       height: '93vh',
+      backgroundSize: 'cover',
     },
     infoRow: {
       position: 'relative',
@@ -131,7 +132,7 @@ const DISPLAY = {
       md: 6,
       mdOffset: 3,
       border: '1px solid black',
-
+      marginTop: '50px',
     },
     contributorRow: {
       position: 'relative',
@@ -141,15 +142,25 @@ const DISPLAY = {
     contributorCol: {
       xs: 12,
       md: 4,
+      div: {
+        marginBottom: '50px'
+      },
       andy: {
         backgroundImage: 'url(../app/images/andy.jpg)',
         backgroundSize: 'cover',
-        height: '420px',
+        height: '320px',
+        width: '320px',
+        marginLeft: 'auto',
+        marginRight: 'auto'
+
       },
       sean: {
         backgroundImage: 'url(../app/images/sean.jpg)',
         backgroundSize: 'cover',
-        height: '420px',
+        height: '320px',
+        width: '320px',
+        marginLeft: 'auto',
+        marginRight: 'auto'
       },
     }
   }

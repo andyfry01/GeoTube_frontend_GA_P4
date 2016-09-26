@@ -1,142 +1,210 @@
-export default {
+const DISPLAY = {
+
+  // Styles for the nav component at the top of the page
   nav: {
-    listStyleType: 'none',
-    display: 'flex',
-    justifyContent: 'space-around',
-    padding: "30px"
+    height: '7vh',
+    width: '100vw',
+    backgroundColor: '#e52d27',
+    fontSize: '20px',
+    padding: '10px',
+    text: 'white',
   },
-  logo: {
-    fontSize: "30px"
-  },
-  header: {
-    backgroundColor: "red",
-    height: '80px',
-  },
-  search: {
-    mainDiv: {
-      backgroundColor: "#F2EEE4",
-      backgroundSize: "cover",
-      margin: "0 auto",
-      height: "18vh"
-    },
-    searchHeader: {
-      color: "#9e9e9e",
-      textAlign: "center",
-      margin: "5px 0 10px 0",
-      backgroundColor: "#F2EEE4"
-    },
-    rowContainer: {
-      display: "flex",
-      flexFlow: "row",
-      justifyContent: "space-around"
-    },
-    parentDiv: {
-      display: "flex",
-      flexFlow: "row wrap",
-      justifyContent: "space-between"
-    },
-    searchPara: {
-      margin: "0px 0px 5px 0px",
-      color: "blue",
-      textAlign: "center",
-    },
-    searchSelect: {
-      margin: "0 auto"
-    },
-    button: {
-      margin: "0 auto",
-      color: "white",
-      backgroundColor: "red"
-    }
-  },
+
+
+  // Styles for the main page: map, video column, button styles, header, and search bar
   main: {
-    parent: {
-      display: "flex",
-      flexFlow: "row nowrap",
-      height: '77vh',
-      width: '100vw',
-      marginTop: "-8px"
+    button: {
+      bsStyle: "primary",
+      fontFamily: 'Nixie One, cursive',
+      color: 'white',
+      fontSize: '1em'
     },
-    searchContainer: {
-      height: '16vh'
-    }
-  },
-  videos: {
-    rightDiv: {
-      border: "1px solid black",
-      background: "#F2EEE5",
-      display: "flex",
-      flexFlow: "row nowrap",
-      justifyContent: "center",
-      padding: "3px",
-    },
-    eachVideoElement: {
-      margin: '0 8.5%'
+    header: {
+      logo: {
+        fontFamily: 'Righteous, cursive',
+        color: 'white',
+        fontSize: '4.5em'
+      },
+      headerDiv: {
+        marginBottom: '20px'
+      },
+      headerCol: {
+        xs: 12,
+      },
+      bg: {
+        backgroundColor: 'rgba(229, 45, 39, 0.70)',
+        width: '75%',
+        margin: '0 auto'
+      },
+      subHeader: {
+        fontFamily: 'Nixie One, cursive',
+        fontSize: '2em',
+        color: 'white'
+      }
 
     },
-    titleInfo: {
-      margin: '8px auto 5px auto',
-      textAlign: 'center',
-      fontWeight: 'bold',
-      color: '#ee6e73',
-      fontSize: '16px'
+    searchContainer: {
+      height: '93vh',
+      width: '100vw',
+      padding: '10px',
+      background: '#BFD7EA'
     },
-    favorite: {
-      textAlign: 'right',
-      cursor: 'pointer',
-      color: 'red'
+
+    searchBar: {
+      xs: 12,
+      md: 12,
+      position: 'relative'
     },
+
+    error: {
+      xs: 12,
+      md: 12,
+      fontFamily: 'Nixie One, cursive',
+      fontSize: '1.5em',
+      color: 'white'
+    },
+
+    contentArea: {
+      height: '100%',
+      background: '#BFD7EA',
+      colStyles: {
+        xs: 12,
+        md: 6
+      }
+    },
+
+    scrollButton: {
+      backgroundColor: 'rgb(191, 215, 234)',
+    },
+
+    map: {
+      height: '100%',
+      width: '100%',
+    },
+
+    searchFieldElement: {
+      colStyles: {
+        xs: 12,
+        md: 2
+      },
+      searchButtonDiv: {
+        paddingTop: '15px',
+        paddingBottom: '15px'
+      }
+    },
+
+    video: {
+      videoCol: {
+        xs: 12,
+        height: '360px',
+        marginBottom: '10px'
+      },
+      videoTitle: {
+        xs: 12,
+        fontFamily: 'Nixie One, cursive',
+        color: 'black',
+        fontSize: '2em',
+      },
+      iFrame: {
+        height: '100%',
+        width: '100%'
+      }
+    }
   },
+
+
+  // Styles for the about page
   about: {
-    contentContainer: {
-      display: "flex",
-      flexFlow: "row nowrap",
-      height: '93vh'
+    bg: {
+      background: 'url(../app/images/flatiron.jpg) no-repeat center center fixed',
+      backgroundSize: 'cover',
+      height: '100%',
     },
-    leftCol: {
-      width: "20%",
-      minHeight: "80vh",
-      backgroundImage: "url('/app/images/seanNewGeoTube.jpg')",
-      backgroundSize: "cover",
-      backgroundPosition: "center"
+    infoRow: {
+      position: 'relative',
+      height: '30%',
+      width: '100vw',
     },
-    centerCol: {
-      width: "60%",
-      display: "flex",
-      flexFlow: "column nowrap",
-      justifyContent: "space-around",
-      backgroundImage: "url('https://bikramyoganyc.com/wp-content/uploads/2015/07/flatiron_building_new_york_city-111.jpg')",
-      backgroundSize: "cover",
-      backgroundPosition: "center"
+    logo: {
+      fontFamily: 'Righteous, cursive',
+      color: 'white',
+      fontSize: '1.75em',
     },
-    topInfo: {
-      marginRight: "15%",
-      marginLeft: "3%",
-      marginTop: "-11%",
+    text: {
+      fontFamily: 'Nixie One, cursive',
+      fontSize: '1.25em',
+      color: 'white',
+      margin: '10px',
     },
-    bottomInfo: {
-      marginLeft: "15%",
-      marginRight: "3%",
-      marginTop: "-10%"
+    infoCol: {
+      xs: 12,
+      md: 8,
+      mdOffset: 2,
+      marginTop: '25px',
+      backgroundColor: 'rgba(229, 45, 39, 0.70)',
     },
-    infoPar: {
-      color: "white",
-      fontFamily: "Garamond sans-serif",
-      fontSize: "20px",
-      textAlign: "center",
-      background: "black",
-      opacity: "0.75",
-      borderRadius: "2%",
-      padding: "3px 3px 3px 3px"
+    contributorRow: {
+      position: 'relative',
+      height: '70%',
+      width: '100vw',
     },
-    p: {
-      opacity: "1"
+    contributorCol: {
+      xs: 12,
+      md: 5,
+      div: {
+        marginTop: '25px',
+        backgroundColor: 'rgba(229, 45, 39, 0.70)',
+        height: '100%'
+      },
+      andy: {
+        backgroundImage: 'url(../app/images/andy.jpg)',
+        backgroundSize: 'cover',
+        height: '280px',
+        width: '280px',
+        marginLeft: 'auto',
+        marginRight: 'auto'
+      },
+      sean: {
+        backgroundImage: 'url(../app/images/sean.jpg)',
+        backgroundSize: 'cover',
+        height: '280px',
+        width: '280px',
+        marginLeft: 'auto',
+        marginRight: 'auto'
+      },
+    }
+  },
+
+
+  // Styles for the video favorite page
+  favorites: {
+    favoritesContainer: {
+      backgroundColor: 'rgb(191, 215, 234)',
+      position: 'relative',
+      height: '100%',
+      width: '100vw',
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap'
     },
-    rightCol: {
-      width: "20%",
-      backgroundImage: "url('/app/images/andyNewGeoTube.jpg')",
-      backgroundPosition: "center",
-      backgroundSize: "cover",
+    iFrameDiv: {
+      height: '230px',
+      width: '460px',
+      margin: '10px',
+    },
+    videoDiv: {
+      height: '300px',
+      width: '460px',
+      margin: '0 auto'
+    },
+    button: {
+      bsStyle: "primary",
+      fontFamily: 'Nixie One, cursive',
+      color: 'white',
+      fontSize: '1em',
+      marginLeft: '10px'
     }
   }
 }
+
+export default DISPLAY;

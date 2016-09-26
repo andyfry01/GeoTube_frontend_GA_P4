@@ -178,11 +178,38 @@ const DISPLAY = {
         marginRight: 'auto'
       },
     }
-  }
+  },
 
 
   // Styles for the video favorite page
-  
+  favorites: {
+    favoritesContainer: {
+      backgroundColor: 'rgb(191, 215, 234)',
+      position: 'relative',
+      height: '100%',
+      width: '100vw',
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap'
+    },
+    iFrameDiv: {
+      height: '230px',
+      width: '460px',
+      margin: '10px',
+    },
+    videoDiv: {
+      height: '300px',
+      width: '460px',
+      margin: '0 auto'
+    },
+    button: {
+      bsStyle: "primary",
+      fontFamily: 'Nixie One, cursive',
+      color: 'white',
+      fontSize: '1em',
+      marginLeft: '10px'
+    }
+  }
 }
 
 export default DISPLAY;

@@ -1,11 +1,19 @@
+// React
 import React from 'react';
-import display from '../styles/styles';
+
+// Utils
 import ajaxHelpers from '../utils/ajaxHelpers';
-import FavoriteVideo from './FavoriteVideo'
+
+// Styling
+import DISPLAY from '../styles/styles';
+
+// Components
+import FavoriteVideo from '../components/FavoriteVideo'
+
 
 const FavoritesComponent = React.createClass({
   getInitialState: function() {
-    return{
+    return {
       returnedFavorites: '',
       showFavoriteComp: false
     }
@@ -14,8 +22,6 @@ const FavoritesComponent = React.createClass({
     var that = this;
     return ajaxHelpers.getFavorites()
     .then(function(response){
-      console.log("response is:", response);
-      console.log("that is: ", that);
       that.setState({
         returnedFavorites : response,
         showFavoriteComp : true
@@ -24,7 +30,9 @@ const FavoritesComponent = React.createClass({
   },
   render: function(){
     return (
-      <div id="favorite-wrapper">{this.state.showFavoriteComp ? <FavoriteVideo returnedFavorites={this.state.returnedFavorites} /> : null}</div>
+      <div>
+        {this.state.showFavoriteComp ? <FavoriteVideo returnedFavorites={this.state.returnedFavorites} /> : null}
+      </div>
     )
   }
 })

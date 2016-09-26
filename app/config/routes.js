@@ -4,7 +4,7 @@ import Home from '../components/Home';
 import Main from '../components/Main';
 import NavContainer from '../containers/NavContainer';
 import About from '../components/About';
-import FavoritesComponent from '../components/FavoritesComponent';
+import FavoritesComponent from '../containers/FavoritesComponent';
 
 
 

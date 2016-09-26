@@ -1,7 +1,15 @@
+// React
 import React from 'react';
-import display from '../styles/styles';
+
+// Utils
 import ajaxHelpers from '../utils/ajaxHelpers'
+
+// Components
 import Favorites from './Favorites'
+
+// Styling
+import DISPLAY from '../styles/styles';
+
 
 const FavoriteVideo = React.createClass({
   render: function(){
@@ -19,7 +27,9 @@ const FavoriteVideo = React.createClass({
       })
 
     return (
-      <div id="favorite-container">{favorite}</div>
+      <div style={DISPLAY.favorites.favoritesContainer}>
+        {favorite}
+      </div>
     )
   }
 })

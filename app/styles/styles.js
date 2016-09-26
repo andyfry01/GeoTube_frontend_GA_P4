@@ -116,11 +116,10 @@ const DISPLAY = {
   },
 
   about: {
-
     bg: {
-      backgroundImage: 'url(../app/images/flatiron.jpg)',
-      height: '93vh',
+      background: 'url(../app/images/flatiron.jpg) no-repeat center center fixed',
       backgroundSize: 'cover',
+      height: '100%',
     },
     infoRow: {
       position: 'relative',

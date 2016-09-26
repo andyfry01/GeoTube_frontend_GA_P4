@@ -17,11 +17,11 @@ const About = React.createClass({
         </Row>
 
         <Row style={DISPLAY.about.contributorRow}>
-          <Col xs={DISPLAY.about.contributorCol.xs} md={DISPLAY.about.contributorCol.md} mdOffset={1} style={DISPLAY.about.contributorCol}>
+          <Col xs={DISPLAY.about.contributorCol.xs} md={DISPLAY.about.contributorCol.md} mdOffset={1} style={DISPLAY.about.contributorCol.andy}>
             <p style={null}>Andy is a bike riding, guitar playing, outdoors exploring guy. He graduated from Ithaca College with a B.A. in English and German, which led him to Hamburg, Germany as a Fulbright English Teaching Assistant and gave him a lifelong love for travel and new experiences. When he is not coding apps you can find him daydreaming up his next adventure!</p>
           </Col>
 
-          <Col xs={DISPLAY.about.contributorCol.xs} md={DISPLAY.about.contributorCol.md} mdOffset={2} style={DISPLAY.about.contributorCol}>
+          <Col xs={DISPLAY.about.contributorCol.xs} md={DISPLAY.about.contributorCol.md} mdOffset={2} style={DISPLAY.about.contributorCol.sean}>
             <p style={null}>Sean is an ultimate frisbee playing, ex math-teachering, ice cream loving guy.  He graduated from the University of Delaware with a degree in Mathematics/Education and is currently doing nothing related to that: web development. On the weekends you can find him trying to relearn how to ride a unicycle, playing the new hotness 'Spikeball,' or logging an ungodly amount of time playing Fallout 4.</p>
           </Col>
 

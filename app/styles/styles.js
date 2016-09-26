@@ -141,7 +141,16 @@ const DISPLAY = {
     contributorCol: {
       xs: 12,
       md: 4,
-      border: '1px solid black',
+      andy: {
+        backgroundImage: 'url(../app/images/andy.jpg)',
+        backgroundSize: 'cover',
+        height: '420px',
+      },
+      sean: {
+        backgroundImage: 'url(../app/images/sean.jpg)',
+        backgroundSize: 'cover',
+        height: '420px',
+      },
     }
   }
 }

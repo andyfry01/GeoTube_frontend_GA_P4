@@ -25,7 +25,7 @@ const About = React.createClass({
             </Col>
 
             <Col xs={DISPLAY.about.contributorCol.xs} md={DISPLAY.about.contributorCol.md} mdOffset={2} style={DISPLAY.about.contributorCol.div}>
-              <p style={DISPLAY.about.text}>Sean is an ultimate frisbee playing, ex math-teachering, ice cream loving guy.  He graduated from the University of Delaware with a degree in Mathematics/Education and is currently doing nothing related to that: web development. On the weekends you can find him trying to relearn how to ride a unicycle, playing the new hotness 'Spikeball,' or logging an ungodly amount of time playing Fallout 4.</p>
+              <p style={DISPLAY.about.text}>Sean is an ultimate frisbee playing, former math teacher, ice cream loving guy.  He graduated from the University of Delaware with a degree in Mathematics/Education and is currently employed as a Sales Engineer with a FinTech start up called ChartIQ. web development. On the weekends you can find him trying to relearn how to ride a unicycle, reading a sports legend's biography, or learning how to sort algorithms.</p>
               <div style={DISPLAY.about.contributorCol.sean}></div>
             </Col>
 

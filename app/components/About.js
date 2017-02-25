@@ -14,7 +14,7 @@ const About = React.createClass({
 
           <Row style={DISPLAY.about.infoRow}>
             <Col xs={DISPLAY.about.infoCol.xs} md={DISPLAY.about.infoCol.md} mdOffset={DISPLAY.about.infoCol.mdOffset}  style={DISPLAY.about.infoCol}>
-              <span style={DISPLAY.about.logo}>GeoTube</span> <p style={DISPLAY.about.text}> was Andy Fry and Sean Keagan's final project at General Assembly, and was built using React, the Google Maps and the YouTube APIs, and a Rails backend. Many YouTube videos have geolocation metadata with the coordinates of where they were filmed, and searching YouTube by coordinates instead of by video title makes it easy to discover interesting videos regionally. GeoTube makes it easy to discover and watch these videos, and visualizes the search area!</p>
+              <span style={DISPLAY.about.logo}>GeoTube</span> <p style={DISPLAY.about.text}> was Andy Fry and Sean Keegan's final project at General Assembly, and was built using React, the Google Maps and the YouTube APIs, and a Rails backend. Many YouTube videos have geolocation metadata with the coordinates of where they were filmed, and searching YouTube by coordinates instead of by video title makes it easy to discover interesting videos regionally. GeoTube makes it easy to discover and watch these videos, and visualizes the search area!</p>
             </Col>
           </Row>
 

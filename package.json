@@ -28,7 +28,8 @@
     "react-materialize": "^0.14.3",
     "react-responsive": "^1.1.4",
     "react-router": "^2.1.1",
-    "react-scroll": "^1.2.0"
+    "react-scroll": "^1.2.0",
+    "yarn": "^0.15.1"
   },
   "devDependencies": {
     "babel-core": "^6.7.6",
